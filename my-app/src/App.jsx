@@ -1,5 +1,11 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import styled from 'styled-components';
 import GlobalStyle from './styles/GlobalStyle';
+
+import Home from './components/Home/Home';
+import Options from './components/Options/Options';
+import Result from './components/Result/Result';
+import NotFound from './components/NotFound';
 
 const FrameMain = styled.main`
   position: relative;
@@ -26,14 +32,21 @@ const ScreenPage = styled.div`
 function App() {
   return (
     <>
-      <GlobalStyle />
-      <FrameMain>
-        <ScreenContainer>
-          <ScreenPage>
-            <h1>해양생물 MBTI 테스트</h1>
-          </ScreenPage>
-        </ScreenContainer>
-      </FrameMain>
+      <BrowserRouter>
+        <GlobalStyle />
+        <FrameMain>
+          <ScreenContainer>
+            <ScreenPage>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/options" element={<Options />} />
+                <Route path="/result" element={<Result />} />
+                <Route path="/*" element={<NotFound />} />
+              </Routes>
+            </ScreenPage>
+          </ScreenContainer>
+        </FrameMain>
+      </BrowserRouter>
     </>
   );
 }
