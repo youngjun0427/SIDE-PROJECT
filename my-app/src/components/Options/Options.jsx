@@ -26,6 +26,24 @@ const Options = () => {
     slideRef.current.style.transform += 'translateX(-100vw)';
   };
 
+  const mbtiChecker = () => {
+    setLoading(true);
+    let map = {};
+    let result = [];
+    for (let i = 0; i < mbti.length; i++) {
+      if (mbti[i] in map) {
+        map[mbti[i]] += 1;
+      } else {
+        map[mbti[i]] = 1;
+      }
+    }
+    for (let count in map) {
+      if (map[count] >= 2) {
+        result.push(count);
+      }
+    }
+  };
+
   return (
     <>
       <section>
