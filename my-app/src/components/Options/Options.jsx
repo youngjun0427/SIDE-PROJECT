@@ -1,5 +1,5 @@
-import React, { createRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { createRef, useEffect, useState } from 'react';
+import { Navigate, useNavigate } from 'react-router-dom';
 import styles from './option.module.css';
 import Questions from '../../common/api/questionsApi.json';
 
@@ -9,11 +9,11 @@ const Options = () => {
   const [currentSlide, setCurrentSlide] = useState(1);
   const slideRef = createRef(null);
   const TOTAL_SLIDES = 12;
-  const history = useNavigate();
+  const Navigate = useNavigate();
   const [mbti, setMbti] = useState([]);
 
   const slideFirst = () => {
-    setMbti(mbti + Questions[num].answer[0].type);
+    setMbti(mbti + Questions[num].answers[0].type);
     setNum(num + 1);
     setCurrentSlide(currentSlide + 1);
     slideRef.current.style.transform += 'translateX(-100vw)';
@@ -42,7 +42,17 @@ const Options = () => {
         result.push(count);
       }
     }
+
+    setTimeout(() => {
+      const examResult = result.join('');
+      Navigate(`/result/${examResult}`);
+    }, 3000);
   };
+
+  useEffect(() => {
+    currentSlide > TOTAL_SLIDES && mbtiChecker();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentSlide]);
 
   return (
     <>
@@ -75,9 +85,9 @@ const Options = () => {
           </>
         )}
         {loading && (
-          <div>
-            <img src="" alt="" />
-            <div></div>
+          <div className={styles.loading__container}>
+            <img className={styles.ticket} src="" alt="e-ticket" />
+            <div>로딩페이지 입니다</div>
           </div>
         )}
       </section>
