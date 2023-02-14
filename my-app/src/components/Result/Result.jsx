@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Mbti from '../../common/api/mbtiApi.json';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const Result = ({ match }) => {
   const url = window.location.href;
@@ -10,6 +11,10 @@ const Result = ({ match }) => {
   if (!nation) {
     return <div>존재하지 않는 결과입니다.</div>;
   }
+
+  const copyAlert = () => {
+    alert('링크 복사완료!');
+  };
 
   return (
     <>
@@ -63,7 +68,9 @@ const Result = ({ match }) => {
           </div>
           <div>
             <Link to="/">다시하기</Link>
-            <button>링크복사</button>
+            <CopyToClipboard text={url}>
+              <button onClick={copyAlert}>링크복사</button>
+            </CopyToClipboard>
           </div>
         </div>
       </div>
