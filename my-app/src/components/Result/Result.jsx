@@ -3,10 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import Mbti from '../../common/api/mbtiApi.json';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
-const Result = ({ match }) => {
-  // const url = window.location.href;
-  // const { mbtiName } = match.params;
-  // const nation = Mbti[mbtiName];
+const Result = () => {
   const url = window.location.href;
   const { mbtiName } = useParams();
   const nation = Mbti[mbtiName];
@@ -26,12 +23,7 @@ const Result = ({ match }) => {
           <div>
             <>
               <Link to="/">
-                <img
-                  src="img/test-logo.png"
-                  alt="로고 이미지"
-                  width={50}
-                  height={50}
-                />
+                <img src="img/test-logo.png" alt="로고 이미지" />
               </Link>
             </>
           </div>
