@@ -40,7 +40,7 @@ function App() {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/options" element={<Options />} />
-                <Route path="/result" element={<Result />} />
+                <Route path="/result/:mbtiName" element={<Result />} />
                 <Route path="/*" element={<NotFound />} />
               </Routes>
             </ScreenPage>

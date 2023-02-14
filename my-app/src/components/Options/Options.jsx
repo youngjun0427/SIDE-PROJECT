@@ -1,5 +1,5 @@
 import React, { createRef, useEffect, useState } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styles from './option.module.css';
 import Questions from '../../common/api/questionsApi.json';
 

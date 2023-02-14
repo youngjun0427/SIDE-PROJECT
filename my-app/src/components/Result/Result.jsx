@@ -1,11 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Mbti from '../../common/api/mbtiApi.json';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const Result = ({ match }) => {
+  // const url = window.location.href;
+  // const { mbtiName } = match.params;
+  // const nation = Mbti[mbtiName];
   const url = window.location.href;
-  const { mbtiName } = match.params;
+  const { mbtiName } = useParams();
   const nation = Mbti[mbtiName];
 
   if (!nation) {
