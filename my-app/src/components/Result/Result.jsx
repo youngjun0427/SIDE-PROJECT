@@ -27,9 +27,9 @@ const Result = () => {
               </Link>
             </>
           </div>
-          <img src={nation.img} alt="img" />
+          <h1>{nation.subject}</h1>
           <div>
-            <h1>{nation.subject}</h1>
+            <img src={nation.img} alt="img" />
             <br />
           </div>
           <div>
@@ -41,19 +41,20 @@ const Result = () => {
             })}
           </ul>
           <div>
+            <h2>내 유형과의 궁합</h2>
             <div>
               <img src={nation.duo[0].img} alt="mbti캐릭터" Link="/" />
               <div>
-                <h4>함께하면 좋아요!</h4>
-                <p>찰떡궁합 그 자체 {nation.duo[0].subhead}</p>
+                <h4>Good</h4>
+                <p>{nation.duo[0].subhead}</p>
                 <p>{nation.duo[0].des}</p>
               </div>
             </div>
             <div>
               <img src={nation.counter[0].img} alt="mbti캐릭터" />
               <div>
-                <h4>가능하면 피하는게 좋겠어요!</h4>
-                <p>도망가세요 {nation.counter[0].subhead}</p>
+                <h4>Bad</h4>
+                <p>{nation.counter[0].subhead}</p>
                 <p>{nation.counter[0].des}</p>
               </div>
             </div>
