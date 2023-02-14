@@ -23,7 +23,7 @@ const Result = () => {
           <div>
             <>
               <Link to="/">
-                <img src="img/test-logo.png" alt="로고 이미지" />
+                <img src="../img/test-logo.png" alt="로고 이미지" />
               </Link>
             </>
           </div>
@@ -32,18 +32,20 @@ const Result = () => {
             <img src={nation.img} alt="img" />
             <br />
           </div>
-          <div>
+          {/* <div>
             <h2>{nation.id}의 특징은?</h2>
-          </div>
+          </div> */}
           <ul>
             {nation.description.map(item => {
               return <li key={item.des}>{item.des}</li>;
             })}
           </ul>
           <div>
-            <h2>내 유형과의 궁합</h2>
+            <h2>{nation.name}와 유형별 궁합</h2>
             <div>
-              <img src={nation.duo[0].img} alt="mbti캐릭터" Link="/" />
+              <Link to={`${/result/}${nation.duo[0].subhead}`}>
+                <img src={nation.duo[0].img} alt="mbti캐릭터" />
+              </Link>
               <div>
                 <h4>Good</h4>
                 <p>{nation.duo[0].subhead}</p>
@@ -51,7 +53,9 @@ const Result = () => {
               </div>
             </div>
             <div>
-              <img src={nation.counter[0].img} alt="mbti캐릭터" />
+              <Link to={`${/result/}${nation.counter[0].subhead}`}>
+                <img src={nation.counter[0].img} alt="mbti캐릭터" />
+              </Link>
               <div>
                 <h4>Bad</h4>
                 <p>{nation.counter[0].subhead}</p>

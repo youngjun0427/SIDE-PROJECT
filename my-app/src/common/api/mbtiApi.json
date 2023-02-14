@@ -26,16 +26,16 @@
     ],
     "duo": [
       {
-        "img": "",
-        "subhead": "ENTP",
-        "des": "창의적인 갑오징어"
+        "img": "../../img/ESFP 가시해마.png",
+        "subhead": "ESFP",
+        "des": "재기발랄한 가시해마"
       }
     ],
     "counter": [
       {
-        "img": "",
-        "subhead": "ESFP",
-        "des": "연예인 체질 돌고래"
+        "img": "../../img/ESFJ 혹등고래.png",
+        "subhead": "ESFJ",
+        "des": "사려깊은 혹등고래"
       }
     ]
   },
@@ -66,16 +66,16 @@
     ],
     "duo": [
       {
-        "img": "",
-        "subhead": "ENTJ",
-        "des": "호기심 넘치는 바다사자"
+        "img": "../../img/ESFJ 혹등고래.png",
+        "subhead": "ESFJ",
+        "des": "사려깊은 혹등고래"
       }
     ],
     "counter": [
       {
-        "img": "",
-        "subhead": "ESFJ",
-        "des": "사려깊은 혹등고래"
+        "img": "../../img/ESFP 가시해마.png",
+        "subhead": "ESFP",
+        "des": "재기발랄한 가시해마"
       }
     ]
   },
@@ -106,16 +106,16 @@
     ],
     "duo": [
       {
-        "img": "",
-        "subhead": "ENFP",
-        "des": ""
+        "img": "../../img/ESTP 흰동가리.png",
+        "subhead": "ESTP",
+        "des": "모험을 즐기는 흰동가리"
       }
     ],
     "counter": [
       {
-        "img": "",
+        "img": "../../img/ESTJ 황제펭귄.png",
         "subhead": "ESTP",
-        "des": ""
+        "des": "법 없이도 살 황제펭귄"
       }
     ]
   },
@@ -146,16 +146,16 @@
     ],
     "duo": [
       {
-        "img": "",
+        "img": "../../img/ESTJ 황제펭귄.png",
         "subhead": "ENFJ",
-        "des": ""
+        "des": "법 없이도 살 황제펭귄"
       }
     ],
     "counter": [
       {
-        "img": "",
+        "img": "../../img/ESTP 흰동가리.png",
         "subhead": "ESFJ",
-        "des": ""
+        "des": "모험을 즐기는 흰동가리"
       }
     ]
   },
@@ -186,16 +186,16 @@
     ],
     "duo": [
       {
-        "img": "",
-        "subhead": "ESTP",
-        "des": ""
+        "img": "../../img/ENFP 돌고래.png",
+        "subhead": "ENFP",
+        "des": "연예인 체질 돌고래"
       }
     ],
     "counter": [
       {
-        "img": "",
-        "subhead": "ENFP",
-        "des": ""
+        "img": "../../img/ENFJ 개복치.png",
+        "subhead": "ENFJ",
+        "des": "감성충만 개복치"
       }
     ]
   },
@@ -226,23 +226,23 @@
     ],
     "duo": [
       {
-        "img": "",
-        "subhead": "ESFP",
-        "des": ""
+        "img": "../../img/ENTP 갑오징어.png",
+        "subhead": "ENTP",
+        "des": "창의적인 갑오징어"
       }
     ],
     "counter": [
       {
-        "img": "",
+        "img": "../../img/ENTJ 바다사자.png",
         "subhead": "ENTP",
-        "des": ""
+        "des": "호기심 넘치는 바다사자"
       }
     ]
   },
   "ISTP": {
     "id": "ISTP",
     "name": "성게",
-    "subject": "게으른 천재, 성게",
+    "subject": "게으른 천재 성게",
     "img": "../../img/ISTP 성게.png",
     "description": [
       {
@@ -266,16 +266,16 @@
     ],
     "duo": [
       {
-        "img": "",
-        "subhead": "ENTP",
-        "des": ""
+        "img": "../../img//ENFJ 개복치.png",
+        "subhead": "ENFJ",
+        "des": "감성적인 개복치"
       }
     ],
     "counter": [
       {
-        "img": "",
-        "subhead": "ESFP",
-        "des": ""
+        "img": "../../img/ENFP 돌고래.png",
+        "subhead": "ENFP",
+        "des": "연예인 체질 돌고래"
       }
     ]
   },
@@ -306,16 +306,16 @@
     ],
     "duo": [
       {
-        "img": "",
+        "img": "../../img/ENTJ 바다사자.png",
         "subhead": "ESFJ",
-        "des": ""
+        "des": "호기심 넘치는 바다사자"
       }
     ],
     "counter": [
       {
-        "img": "",
+        "img": "../../img/ENTP 갑오징어.png",
         "subhead": "ENTJ",
-        "des": ""
+        "des": "창의적인 갑오징어"
       }
     ]
   },
@@ -346,24 +346,24 @@
     ],
     "duo": [
       {
-        "img": "",
-        "subhead": "ISTJ",
-        "des": ""
+        "img": "../../img/INFJ 정어리.png",
+        "subhead": "INFJ",
+        "des": "의로운 정어리"
       }
     ],
     "counter": [
       {
-        "img": "",
+        "img": "../../img/INFP 상괭이.png",
         "subhead": "INFJ",
-        "des": ""
+        "des": "수줍은 미소의 상괭이"
       }
     ]
   },
-  "ESFP": {
-    "id": "ESFP",
+  "ENFP": {
+    "id": "ENFP",
     "name": "돌고래",
     "subject": "연애인 체질 돌고래",
-    "img": "../../img/ESFP 돌고래.png",
+    "img": "../../img/ENFP 돌고래.png",
     "description": [
       {
         "des": "돌고래는 호기심이 많고 개방적인 성격을 가져 사람에게도 우호적일만큼 '바다의 인싸'에요!"
@@ -386,16 +386,16 @@
     ],
     "duo": [
       {
-        "img": "",
+        "img": "../../img/ISTJ 해삼.png",
         "subhead": "ISFJ",
-        "des": ""
+        "des": "부지런하고 깔끔한 해삼"
       }
     ],
     "counter": [
       {
-        "img": "",
+        "img": "../../img/ISTP 성게.png",
         "subhead": "INTJ",
-        "des": ""
+        "des": "게으른 천재 성게"
       }
     ]
   },
@@ -426,16 +426,16 @@
     ],
     "duo": [
       {
-        "img": "",
-        "subhead": "INTP",
-        "des": ""
+        "img": "../../img/ISFP 그린란드상어",
+        "subhead": "ISFP",
+        "des": "낙천주의자 그린란드 상어"
       }
     ],
     "counter": [
       {
-        "img": "",
-        "subhead": "ISFP",
-        "des": ""
+        "img": "../../img/ISFJ 푸른바다거북.png",
+        "subhead": "ISFJ",
+        "des": "책임감이 강한 푸른바다거북"
       }
     ]
   },
@@ -466,16 +466,16 @@
     ],
     "duo": [
       {
-        "img": "",
-        "subhead": "INTJ",
-        "des": ""
+        "img": "../../img/ISFJ 푸른바다거북.png",
+        "subhead": "ISFJ",
+        "des": "책임감이 강한 푸른바다거북"
       }
     ],
     "counter": [
       {
-        "img": "",
-        "subhead": "ISFJ",
-        "des": ""
+        "img": "../../img/ISFP 그린란드상어",
+        "subhead": "ISFP",
+        "des": "낙천주의자 그린란드 상어"
       }
     ]
   },
@@ -506,24 +506,24 @@
     ],
     "duo": [
       {
-        "img": "../../img/INFP 상괭이.png",
-        "subhead": "INFP",
-        "des": "수줍은 미소의 상괭이"
-      }
-    ],
-    "counter": [
-      {
         "img": "../../img/ISTP 성게.png",
         "subhead": "ISTP",
         "des": "게으른 천재 성게"
       }
+    ],
+    "counter": [
+      {
+        "img": "../../img/ISTJ 해삼.png",
+        "subhead": "ISTJ",
+        "des": "부지런하고 깔끔한 해삼"
+      }
     ]
   },
-  "ENFP": {
-    "id": "ENFP",
+  "ESFP": {
+    "id": "ESFP",
     "name": "가시해마",
     "subject": "재기발랄한 가시해마",
-    "img": "../../img/ENFP 가시해마.png",
+    "img": "../../img/ESFP 가시해마.png",
     "description": [
       {
         "des": "열정적이고 순발력이 뛰어난 가시해마!"
@@ -546,16 +546,16 @@
     ],
     "duo": [
       {
-        "img": "",
-        "subhead": "INFJ",
-        "des": ""
+        "img": "../../img/INTJ 북극곰.png",
+        "subhead": "INTJ",
+        "des": "고독한 북극곰"
       }
     ],
     "counter": [
       {
-        "img": "",
+        "img": "../../img/INTP 문어.png",
         "subhead": "ISTJ",
-        "des": ""
+        "des": "논리적인 문어"
       }
     ]
   },
@@ -586,16 +586,16 @@
     ],
     "duo": [
       {
-        "img": "",
-        "subhead": "ISTP",
-        "des": ""
+        "img": "../../img/INFP 상괭이.png",
+        "subhead": "INFP",
+        "des": "수줍은 미소의 상괭이"
       }
     ],
     "counter": [
       {
-        "img": "",
-        "subhead": "INFP",
-        "des": ""
+        "img": "../../img/INFJ 정어리.png",
+        "subhead": "INFJ",
+        "des": "의로운 정어리"
       }
     ]
   },
@@ -626,16 +626,16 @@
     ],
     "duo": [
       {
-        "img": "",
-        "subhead": "ISFP",
-        "des": ""
+        "img": "../../img/INTP 문어.png",
+        "subhead": "INTP",
+        "des": "논리적인 문어"
       }
     ],
     "counter": [
       {
-        "img": "",
-        "subhead": "INTP",
-        "des": ""
+        "img": "../../img/INTJ 북극곰.png",
+        "subhead": "INTJ",
+        "des": "고독한 북극곰"
       }
     ]
   }
