@@ -11,7 +11,7 @@ const Options = () => {
   const TOTAL_SLIDES = 12;
   const Navigate = useNavigate();
   const [mbti, setMbti] = useState([]);
-  const [value, setValue] = useState(8.33333);
+  const [value, setValue] = useState(1);
 
   const slideFirst = () => {
     setMbti(mbti + Questions[num].answers[0].type);
@@ -56,7 +56,7 @@ const Options = () => {
   }, [currentSlide]);
 
   function handleButtonClick() {
-    setValue(value + 8.33333);
+    setValue(value + 1);
   }
 
   return (
@@ -72,16 +72,18 @@ const Options = () => {
                       <div>
                         <div
                           style={{
-                            border: '1px solid gray',
-                            width: '200px',
-                            height: '20px',
+                            width: '320px',
+                            height: '11px',
+                            borderRadius: '10px',
+                            background: '#ECE9E9',
                           }}
                         >
                           <div
                             style={{
-                              backgroundColor: 'green',
-                              width: `${value}%`,
+                              width: `${(100 / 12) * value}%`,
                               height: '100%',
+                              borderRadius: '10px',
+                              backgroundColor: '#2496EA',
                             }}
                           />
                         </div>
