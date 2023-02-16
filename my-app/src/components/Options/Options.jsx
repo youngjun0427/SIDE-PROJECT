@@ -11,6 +11,7 @@ const Options = () => {
   const TOTAL_SLIDES = 12;
   const Navigate = useNavigate();
   const [mbti, setMbti] = useState([]);
+  const [value, setValue] = useState(8.33333);
 
   const slideFirst = () => {
     setMbti(mbti + Questions[num].answers[0].type);
@@ -54,6 +55,10 @@ const Options = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentSlide]);
 
+  function handleButtonClick() {
+    setValue(value + 8.33333);
+  }
+
   return (
     <>
       <section>
@@ -65,16 +70,41 @@ const Options = () => {
                   <div className={styles.content} key={item.id}>
                     <div>
                       <div>
+                        <div
+                          style={{
+                            border: '1px solid gray',
+                            width: '200px',
+                            height: '20px',
+                          }}
+                        >
+                          <div
+                            style={{
+                              backgroundColor: 'green',
+                              width: `${value}%`,
+                              height: '100%',
+                            }}
+                          />
+                        </div>
                         <span>{currentSlide}</span>
                         <span>/{TOTAL_SLIDES}</span>
                       </div>
                       <h1>{item.Question}</h1>
                     </div>
                     <article>
-                      <button onClick={slideFirst}>
+                      <button
+                        onClick={() => {
+                          slideFirst();
+                          handleButtonClick();
+                        }}
+                      >
                         {item.answers[0].content}
                       </button>
-                      <button onClick={slideSecond}>
+                      <button
+                        onClick={() => {
+                          slideSecond();
+                          handleButtonClick();
+                        }}
+                      >
                         {item.answers[1].content}
                       </button>
                     </article>
