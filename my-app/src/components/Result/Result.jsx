@@ -17,34 +17,17 @@ const Result = () => {
         // 두번째 step 에서 가져온 javascript key 를 이용하여 initialize
         kakao.init(KAKAO_SHARE_API);
       }
-
-      //     kakao.Link.sendDefault({
-      //       objectType: 'feed',
-      //       content: {
-      //         title: `해양생물 유형테스트`,
-      //         description: `나와 닮은 해양생물 알아보기!`,
-      //         imageUrl: '',
-      //         link: {
-      //           webUrl: 'http://localhost:3000/',
-      //         },
-      //       },
-      //     });
-      //   }
-      // };
-      // const sendKakao = function () {
-      // 메시지 공유 함수
       kakao.Link.sendScrap({
         requestUrl: 'http://localhost:3000/', // 페이지 url
         templateId: 90172, // 메시지템플릿 번호
         templateArgs: {
           PROFILE: '프로필 이미지 주소', // 프로필 이미지 주소 ${PROFILE}
           THUMB: '썸네일 주소', // 썸네일 주소 ${THUMB}
-          TITLE: '제목 텍스트입니다', // 제목 텍스트 ${TITLE}
-          DESC: '설명 텍스트입니다', // 설명 텍스트 ${DESC}
+          TITLE: '🐳 해양생물 유형테스트', // 제목 텍스트 ${TITLE} (물고기 이모티콘 추가)
+          DESC: '나와 닮은 해양생물을 알아보기!', // 설명 텍스트 ${DESC}
         },
       });
     }
-    // }
   };
 
   useEffect(() => {
