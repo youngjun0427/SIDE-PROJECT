@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Mbti from '../../common/api/mbtiApi.json';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
@@ -7,6 +7,53 @@ const Result = () => {
   const url = window.location.href;
   const { mbtiName } = useParams();
   const nation = Mbti[mbtiName];
+
+  const shareToKakaotalk = () => {
+    const KAKAO_SHARE_API = process.env.REACT_APP_KAKAO_KEY;
+    if (window.Kakao) {
+      const kakao = window.Kakao;
+      // 중복 initialization 방지
+      if (!kakao.isInitialized()) {
+        // 두번째 step 에서 가져온 javascript key 를 이용하여 initialize
+        kakao.init(KAKAO_SHARE_API);
+      }
+
+      //     kakao.Link.sendDefault({
+      //       objectType: 'feed',
+      //       content: {
+      //         title: `해양생물 유형테스트`,
+      //         description: `나와 닮은 해양생물 알아보기!`,
+      //         imageUrl: '',
+      //         link: {
+      //           webUrl: 'http://localhost:3000/',
+      //         },
+      //       },
+      //     });
+      //   }
+      // };
+      // const sendKakao = function () {
+      // 메시지 공유 함수
+      kakao.Link.sendScrap({
+        requestUrl: 'http://localhost:3000/', // 페이지 url
+        templateId: 90172, // 메시지템플릿 번호
+        templateArgs: {
+          PROFILE: '프로필 이미지 주소', // 프로필 이미지 주소 ${PROFILE}
+          THUMB: '썸네일 주소', // 썸네일 주소 ${THUMB}
+          TITLE: '제목 텍스트입니다', // 제목 텍스트 ${TITLE}
+          DESC: '설명 텍스트입니다', // 설명 텍스트 ${DESC}
+        },
+      });
+    }
+    // }
+  };
+
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://developers.kakao.com/sdk/js/kakao.js';
+    script.async = true;
+    document.body.appendChild(script);
+    return () => document.body.removeChild(script);
+  }, []);
 
   if (!nation) {
     return <div>존재하지 않는 결과입니다.</div>;
@@ -64,7 +111,7 @@ const Result = () => {
             </div>
           </div>
           <div>
-            <button>카톡공유</button>
+            <button onClick={shareToKakaotalk}>카톡공유</button>
           </div>
           <div>
             <Link to="/">다시하기</Link>
@@ -77,5 +124,4 @@ const Result = () => {
     </>
   );
 };
-
 export default Result;
