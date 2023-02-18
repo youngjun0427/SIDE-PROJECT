@@ -118,8 +118,12 @@ const Options = () => {
         )}
         {loading && (
           <div className={styles.loading__container}>
-            <img className={styles.ticket} src="" alt="e-ticket" />
-            <div>로딩페이지 입니다</div>
+            <img
+              className={styles.ticket}
+              src="img/loading.png"
+              alt="로딩 이미지"
+            />
+            <div>나와 닮은 해양생물을 찾는 중이에요</div>
           </div>
         )}
       </section>
