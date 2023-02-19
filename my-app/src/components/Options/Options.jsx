@@ -125,23 +125,23 @@ export default Options;
 const OptionsSection = styled.section`
   display: flex;
   align-items: center;
-  max-width: 100%;
+  width: 100%;
+  max-width: 390px;
   overflow-x: hidden;
   overflow-y: auto;
 `;
 
 const OptionsSlider = styled.div`
-  /* width: calc(100vw * ${(props) => props.TOTAL_SLIDES}); */
   display: flex;
   position: relative;
-  width: 100%;
+  width: 1200vw;
   transition: transform 0.5s ease;
 `;
 
 const OptionsContent = styled.div`
-  float: left;
   width: 100vw;
-  max-width: 390px;
+  float: left;
+  /* max-width: 390px; */
 `;
 
 const LogoBox = styled.div`
