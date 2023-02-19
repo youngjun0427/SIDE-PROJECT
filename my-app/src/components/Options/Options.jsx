@@ -2,6 +2,7 @@ import React, { createRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './option.module.css';
 import Questions from '../../common/api/questionsApi.json';
+import styled from 'styled-components';
 
 const Options = () => {
   const [loading, setLoading] = useState(false);
@@ -61,38 +62,22 @@ const Options = () => {
 
   return (
     <>
-      <section>
+      <OptionsSection>
         {!loading && (
           <>
-            <div className={styles.slider} ref={slideRef}>
-              {Questions.map(item => {
+            <OptionsBox ref={slideRef}>
+              {Questions.map((item) => {
                 return (
-                  <div className={styles.content} key={item.id}>
-                    <div>
-                      <div>
-                        <div
-                          style={{
-                            width: '320px',
-                            height: '11px',
-                            borderRadius: '10px',
-                            background: '#ECE9E9',
-                          }}
-                        >
-                          <div
-                            style={{
-                              width: `${(100 / 12) * value}%`,
-                              height: '100%',
-                              borderRadius: '10px',
-                              backgroundColor: '#2496EA',
-                            }}
-                          />
-                        </div>
-                        <span>{currentSlide}</span>
-                        <span>/{TOTAL_SLIDES}</span>
-                      </div>
-                      <h1>{item.Question}</h1>
-                    </div>
-                    <article>
+                  <OptionsContent key={item.id}>
+                    <ProgressBar>
+                      <Progressgauge value={value} />
+                    </ProgressBar>
+                    <TotalSlides>
+                      <span>{currentSlide}</span>
+                      <span>/{TOTAL_SLIDES}</span>
+                    </TotalSlides>
+                    <Question>{item.question}</Question>
+                    <ButtonBox>
                       <button
                         onClick={() => {
                           slideFirst();
@@ -109,26 +94,65 @@ const Options = () => {
                       >
                         {item.answers[1].content}
                       </button>
-                    </article>
-                  </div>
+                    </ButtonBox>
+                  </OptionsContent>
                 );
               })}
-            </div>
+            </OptionsBox>
           </>
         )}
         {loading && (
           <div className={styles.loading__container}>
-            <img
-              className={styles.ticket}
-              src="img/loading.png"
-              alt="로딩 이미지"
-            />
+            <img className={styles.ticket} src='img/loading.png' alt='로딩 이미지' />
             <div>나와 닮은 해양생물을 찾는 중이에요</div>
           </div>
         )}
-      </section>
+      </OptionsSection>
     </>
   );
 };
 
 export default Options;
+
+const OptionsSection = styled.section`
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+`;
+
+const OptionsBox = styled.div`
+  width: 1200vw;
+  display: flex;
+`;
+
+const OptionsContent = styled.div`
+  width: 100vw;
+`;
+
+const ProgressBar = styled.div`
+  width: 320px;
+  height: 11px;
+  border-radius: 10px;
+  background: #ece9e9;
+`;
+
+const ButtonBox = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  & button {
+    display: flex;
+    justify-content: center;
+  }
+`;
+
+const TotalSlides = styled.div``;
+
+const Question = styled.h1``;
+
+const Progressgauge = styled.div`
+  width: ${({ value }) => `${(100 / 12) * value}%`};
+  height: 100%;
+  border-radius: 10px;
+  background-color: #2496ea;
+`;

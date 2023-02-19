@@ -24,7 +24,8 @@ const GlobalStyle = createGlobalStyle`
     font-family:'Noto Sans KR', sans-serif;
     text-align: center;
     font-weight: 100;
-    text-align: center;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
   html, 
   h1, 
@@ -85,7 +86,9 @@ const GlobalStyle = createGlobalStyle`
   }
   label, 
   input, 
-  button, 
+  button {
+    border: none;
+  } 
   select, 
   img {
     vertical-align:middle;
