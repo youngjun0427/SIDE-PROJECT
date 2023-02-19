@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
   }
   html, 
   body {
-    width:100%; 
+    width:100%;
     font-size: calc( 12px + 0.4vw ); 
     font-family:'Noto Sans KR', sans-serif;
     text-align: center;
@@ -87,7 +87,9 @@ const GlobalStyle = createGlobalStyle`
   label, 
   input, 
   button {
-    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 3px;
   } 
   select, 
   img {

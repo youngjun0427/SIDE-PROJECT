@@ -9,7 +9,7 @@ const Options = () => {
   const [num, setNum] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(1);
   const slideRef = createRef(null);
-  const TOTAL_SLIDES = 12;
+
   const Navigate = useNavigate();
   const [mbti, setMbti] = useState([]);
   const [value, setValue] = useState(1);
@@ -51,6 +51,8 @@ const Options = () => {
     }, 3000);
   };
 
+  const TOTAL_SLIDES = 12;
+
   useEffect(() => {
     currentSlide > TOTAL_SLIDES && mbtiChecker();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -62,20 +64,26 @@ const Options = () => {
 
   return (
     <>
-      <OptionsSection>
+      <OptionsSection id='root'>
         {!loading && (
           <>
-            <OptionsBox ref={slideRef}>
+            <OptionsSlider ref={slideRef} TOTAL_SLIDES={12}>
               {Questions.map((item) => {
                 return (
                   <OptionsContent key={item.id}>
-                    <ProgressBar>
-                      <Progressgauge value={value} />
-                    </ProgressBar>
-                    <TotalSlides>
-                      <span>{currentSlide}</span>
-                      <span>/{TOTAL_SLIDES}</span>
-                    </TotalSlides>
+                    <LogoBox>
+                      <img src='img/test-logo.png' alt='로고이미지' />
+                      <h1>나와 닮은 해양생물 알아보기!</h1>
+                    </LogoBox>
+                    <ProgressBox>
+                      <ProgressBar>
+                        <Progressgauge value={value} />
+                      </ProgressBar>
+                      <TotalSlides>
+                        <span>{currentSlide}</span>
+                        <span>/{TOTAL_SLIDES}</span>
+                      </TotalSlides>
+                    </ProgressBox>
                     <Question>{item.question}</Question>
                     <ButtonBox>
                       <button
@@ -98,7 +106,7 @@ const Options = () => {
                   </OptionsContent>
                 );
               })}
-            </OptionsBox>
+            </OptionsSlider>
           </>
         )}
         {loading && (
@@ -115,18 +123,35 @@ const Options = () => {
 export default Options;
 
 const OptionsSection = styled.section`
+  display: flex;
+  align-items: center;
   max-width: 100%;
   overflow-x: hidden;
   overflow-y: auto;
 `;
 
-const OptionsBox = styled.div`
-  width: 1200vw;
+const OptionsSlider = styled.div`
+  /* width: calc(100vw * ${(props) => props.TOTAL_SLIDES}); */
   display: flex;
+  position: relative;
+  width: 100%;
+  transition: transform 0.5s ease;
 `;
 
 const OptionsContent = styled.div`
+  float: left;
   width: 100vw;
+  max-width: 390px;
+`;
+
+const LogoBox = styled.div`
+  flex-direction: column;
+
+  & img {
+    width: 240px;
+    height: 115px;
+    margin: 56px 75px 0;
+  }
 `;
 
 const ProgressBar = styled.div`
@@ -148,11 +173,17 @@ const ButtonBox = styled.div`
 
 const TotalSlides = styled.div``;
 
-const Question = styled.h1``;
+const Question = styled.span``;
 
 const Progressgauge = styled.div`
   width: ${({ value }) => `${(100 / 12) * value}%`};
   height: 100%;
   border-radius: 10px;
   background-color: #2496ea;
+`;
+
+const ProgressBox = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
 `;
