@@ -12,6 +12,8 @@ const MainLayout = ({ children }) => {
 export default MainLayout;
 
 const MainContainer = styled.div`
+  overflow-x: hidden;
+  overflow-y: auto;
   position: relative;
   max-width: 390px;
   height: 100%;

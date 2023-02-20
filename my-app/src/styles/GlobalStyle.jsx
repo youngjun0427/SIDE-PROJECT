@@ -19,11 +19,13 @@ const GlobalStyle = createGlobalStyle`
   }
   html, 
   body {
-    width:100%;
     font-size: calc( 12px + 0.4vw ); 
     font-family:'Noto Sans KR', sans-serif;
     text-align: center;
     font-weight: 100;
+    /* width:100%; */
+    /* max-width: 390px; */
+    max-width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
   }

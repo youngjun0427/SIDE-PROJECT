@@ -19,6 +19,7 @@ const Options = () => {
     setNum(num + 1);
     setCurrentSlide(currentSlide + 1);
     slideRef.current.style.transform += 'translateX(-100vw)';
+    setValue(value + 1);
   };
 
   const slideSecond = () => {
@@ -26,6 +27,7 @@ const Options = () => {
     setNum(num + 1);
     setCurrentSlide(currentSlide + 1);
     slideRef.current.style.transform += 'translateX(-100vw)';
+    setValue(value + 1);
   };
 
   const mbtiChecker = () => {
@@ -58,10 +60,6 @@ const Options = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentSlide]);
 
-  function handleButtonClick() {
-    setValue(value + 1);
-  }
-
   return (
     <>
       <OptionsSection id='root'>
@@ -89,7 +87,6 @@ const Options = () => {
                       <button
                         onClick={() => {
                           slideFirst();
-                          handleButtonClick();
                         }}
                       >
                         {item.answers[0].content}
@@ -97,7 +94,6 @@ const Options = () => {
                       <button
                         onClick={() => {
                           slideSecond();
-                          handleButtonClick();
                         }}
                       >
                         {item.answers[1].content}
@@ -125,23 +121,23 @@ export default Options;
 const OptionsSection = styled.section`
   display: flex;
   align-items: center;
-  width: 100%;
-  max-width: 390px;
-  overflow-x: hidden;
-  overflow-y: auto;
+  /* width: 100%; */
+  /* max-width: 390px; */
+  /* overflow-x: hidden;
+  overflow-y: auto; */
 `;
 
 const OptionsSlider = styled.div`
   display: flex;
   position: relative;
   width: 1200vw;
-  transition: transform 0.5s ease;
+  /* transition: transform 0.5s ease; */
 `;
 
 const OptionsContent = styled.div`
   width: 100vw;
   float: left;
-  /* max-width: 390px; */
+  text-align: center;
 `;
 
 const LogoBox = styled.div`
@@ -150,7 +146,11 @@ const LogoBox = styled.div`
   & img {
     width: 240px;
     height: 115px;
-    margin: 56px 75px 0;
+    margin: 56px 75px 15px;
+
+    & h1 {
+      margin-left: 83px;
+    }
   }
 `;
 
@@ -167,7 +167,7 @@ const ButtonBox = styled.div`
 
   & button {
     display: flex;
-    justify-content: center;
+    justify-content: left;
   }
 `;
 
