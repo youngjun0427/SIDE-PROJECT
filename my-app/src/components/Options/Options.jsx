@@ -65,7 +65,7 @@ const Options = () => {
       <OptionsSection id='root'>
         {!loading && (
           <>
-            <OptionsSlider ref={slideRef} TOTAL_SLIDES={12}>
+            <OptionsSlider ref={slideRef}>
               {Questions.map((item) => {
                 return (
                   <OptionsContent key={item.id}>
@@ -120,24 +120,24 @@ export default Options;
 
 const OptionsSection = styled.section`
   display: flex;
-  align-items: center;
-  /* width: 100%; */
-  /* max-width: 390px; */
-  /* overflow-x: hidden;
-  overflow-y: auto; */
+  width: 100%;
+  overflow: hidden;
+  /* align-items: center; */
 `;
 
 const OptionsSlider = styled.div`
   display: flex;
-  position: relative;
-  width: 1200vw;
-  /* transition: transform 0.5s ease; */
+  width: 100vw;
+  margin: 0 auto;
+  transition: transform 0.3s ease-in-out;
 `;
 
 const OptionsContent = styled.div`
-  width: 100vw;
   float: left;
-  text-align: center;
+  /* display: flex; */
+  /* text-align: center; */
+  /* margin: 0 auto; */
+  width: 100vw;
 `;
 
 const LogoBox = styled.div`
@@ -167,7 +167,7 @@ const ButtonBox = styled.div`
 
   & button {
     display: flex;
-    justify-content: left;
+    justify-content: center;
   }
 `;
 
