@@ -27,29 +27,30 @@ const HomeSection = styled.div`
 `;
 
 const LogoImg = styled.div`
-  margin: 230px auto 0;
+  margin: 23rem auto 0;
   background-image: url('img/test-logo.png');
   background-size: cover;
-  width: 335px;
-  height: 160px;
+  width: 33.5rem;
+  height: 16rem;
 `;
 
 const LogoText = styled.h1`
-  color: #00355c;
-  font-size: 24px;
+  color: var(--main-color);
+  font-size: var(--fs-lg);
   font-weight: 400;
-  margin-top: 8px;
-  margin-bottom: 44px;
+  margin-top: 0.8rem;
+  margin-bottom: 4.4rem;
 `;
 
 const StartBtn = styled.button`
-  width: 319px;
-  height: 64px;
-  color: #0094ff;
-  font-size: 24px;
+  width: 35.8rem;
+  height: 6rem;
+  color: var(--sub-color);
+  font-family: 'Poppins';
+  font-size: var(--fs-lg);
   font-weight: 700;
-  line-height: 36px;
-  background-color: #ffffff;
-  border-radius: 16px;
+  line-height: 3.6rem;
+  background-color: var(--bg-color);
+  border-radius: 1.6rem;
   box-shadow: 0 0 8px 2px rgba(159, 159, 159, 0.25);
 `;
