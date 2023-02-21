@@ -1,5 +1,10 @@
 :root {
   font-size: 10px;
+  --fs-xs: 14px;
+  --fs-sm: 16px;
+  --fs-md: 18px;
+  --fs-lg: 24px;
+  --fs-xl: 28px;
   --bg-color: #ffffff;
   --main-color: #00355c;
   --sub-color: #2496ea;
