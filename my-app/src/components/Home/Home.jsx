@@ -6,7 +6,7 @@ const Home = () => {
     <>
       <LogoImg src='img/test-logo.png' alt='로고' />
       <Link to='/Options'>
-        <StartBtn>START</StartBtn>
+        <StartBtn>START!</StartBtn>
       </Link>
     </>
   );
@@ -29,6 +29,7 @@ const StartBtn = styled.button`
   font-size: 24px;
   font-weight: 700;
   line-height: 36px;
-  background-color: whitesmoke;
+  background-color: #ffffff;
   border-radius: 16px;
+  box-shadow: 0 0 8px 2px rgba(159, 159, 159, 0.25);
 `;
