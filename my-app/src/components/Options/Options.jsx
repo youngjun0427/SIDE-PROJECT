@@ -1,8 +1,8 @@
 import React, { createRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './option.module.css';
 import Questions from '../../common/api/questionsApi.json';
 import styled from 'styled-components';
+import { blinkEffect } from '../../styles/Animation';
 
 const Options = () => {
   const [loading, setLoading] = useState(false);
@@ -50,7 +50,7 @@ const Options = () => {
     setTimeout(() => {
       const examResult = result.join('');
       Navigate(`/result/${examResult}`);
-    }, 3000);
+    }, 30000);
   };
 
   const TOTAL_SLIDES = 12;
@@ -106,10 +106,17 @@ const Options = () => {
           </>
         )}
         {loading && (
-          <div className={styles.loading__container}>
-            <img className={styles.ticket} src='img/loading.png' alt='로딩 이미지' />
-            <div>나와 닮은 해양생물을 찾는 중이에요</div>
-          </div>
+          <LoadingBox>
+            <CoralImg src='img/loading-coral.png' alt='산호 이미지' />
+            <BlinkingFishBox>
+              <BlinkingFishImg src='img/loading-fish.png' alt='물고기 이미지' />
+              <BlinkingFishImg src='img/loading-fish.png' alt='물고기 이미지' />
+              <BlinkingFishImg src='img/loading-fish.png' alt='물고기 이미지' />
+              <BlinkingFishImg src='img/loading-fish.png' alt='물고기 이미지' />
+              <BlinkingFishImg src='img/loading-fish.png' alt='물고기 이미지' />
+            </BlinkingFishBox>
+            <h2>나와 닮은 해양생물을 찾는 중이에요</h2>
+          </LoadingBox>
         )}
       </OptionsSection>
     </>
@@ -122,7 +129,6 @@ const OptionsSection = styled.section`
   display: flex;
   width: 100%;
   overflow: hidden;
-  /* align-items: center; */
 `;
 
 const OptionsSlider = styled.div`
@@ -188,4 +194,48 @@ const ProgressBox = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
+`;
+
+const LoadingBox = styled.div`
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & h2 {
+    margin-top: 3.5rem;
+    font-size: var(--fs-lg);
+    color: var(--main-color);
+    font-weight: 400;
+  }
+`;
+
+const CoralImg = styled.img`
+  margin-top: 28.2rem;
+  width: 10.4rem;
+  height: 8.6rem;
+  align-items: center;
+  justify-content: center;
+`;
+
+const FishBox = styled.div`
+  display: flex;
+`;
+
+const FishImg = styled.img`
+  width: 2.3rem;
+  height: 1.8rem;
+`;
+
+const BlinkingFishImg = styled(FishImg)`
+  animation: ${blinkEffect} 1s ease-in-out infinite alternate;
+`;
+
+const BlinkingFishBox = styled(FishBox)`
+  display: flex;
+
+  & ${BlinkingFishImg}:not(:last-child) {
+    margin-right: 1rem;
+  }
 `;

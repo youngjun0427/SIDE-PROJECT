@@ -39,3 +39,9 @@ export const motion = keyframes`
   transform: translateY(1rem);
 }
 `;
+
+export const blinkEffect = keyframes`
+  50% {
+    opacity: 0;
+  }
+`;

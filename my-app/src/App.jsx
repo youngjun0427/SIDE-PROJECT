@@ -4,8 +4,8 @@ import GlobalStyle from './styles/GlobalStyle';
 import Home from './components/Home/Home';
 import Options from './components/Options/Options';
 import Result from './components/Result/Result';
-import NotFound from './components/NotFound';
-import MainLayout from './components/styles/MainLayout';
+import NotFound from './components/NotFound/NotFound';
+import MainLayout from './styles/MainLayout';
 
 const App = () => {
   return (
