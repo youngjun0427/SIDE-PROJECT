@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { motion } from '../../styles/Animation';
 
 const Home = () => {
   return (
@@ -27,18 +28,19 @@ const HomeSection = styled.div`
 `;
 
 const LogoImg = styled.div`
-  margin: 23rem auto 0;
+  margin: 21rem auto 0;
   background-image: url('img/test-logo.png');
   background-size: cover;
   width: 33.5rem;
   height: 16rem;
+  animation: ${motion} 0.8s linear 0s infinite alternate;
 `;
 
 const LogoText = styled.h1`
   color: var(--main-color);
   font-size: var(--fs-lg);
   font-weight: 400;
-  margin-top: 0.8rem;
+  margin-top: 2rem;
   margin-bottom: 4.4rem;
 `;
 

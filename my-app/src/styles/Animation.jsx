@@ -29,3 +29,13 @@ export const spin = keyframes`
     transform: rotate(360deg);
   }
 `;
+
+export const motion = keyframes`
+0% {
+  transform: translateY(0);
+}
+
+100% {
+  transform: translateY(1rem);
+}
+`;
