@@ -5,6 +5,7 @@ const Home = () => {
   return (
     <>
       <LogoImg src='img/test-logo.png' alt='로고' />
+      <LogoText>나와 닮은 해양생물 알아보기!</LogoText>
       <Link to='/Options'>
         <StartBtn>START!</StartBtn>
       </Link>
@@ -17,14 +18,19 @@ export default Home;
 const LogoImg = styled.img`
   width: 335px;
   height: 160px;
-  margin: 0 auto;
-  margin-top: 259px;
+  margin: 230px auto 8px;
+`;
+
+const LogoText = styled.h1`
+  color: #00355c;
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 44px;
 `;
 
 const StartBtn = styled.button`
   width: 319px;
   height: 64px;
-  margin-top: 32px;
   color: #0094ff;
   font-size: 24px;
   font-weight: 700;
