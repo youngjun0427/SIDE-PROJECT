@@ -127,17 +127,19 @@ const OptionsSection = styled.section`
 
 const OptionsSlider = styled.div`
   display: flex;
-  width: 100vw;
+  width: 1200vw;
   margin: 0 auto;
   transition: transform 0.3s ease-in-out;
 `;
 
 const OptionsContent = styled.div`
   float: left;
-  /* display: flex; */
+  display: flex;
+  flex-direction: column;
   /* text-align: center; */
   /* margin: 0 auto; */
   width: 100vw;
+  max-width: 390px;
 `;
 
 const LogoBox = styled.div`

@@ -46,11 +46,19 @@ const StartBtn = styled.button`
   width: 35.8rem;
   height: 6rem;
   color: var(--sub-color);
-  font-family: 'Poppins';
+  font-family: 'Poppins', sans-serif;
   font-size: var(--fs-lg);
   font-weight: 700;
   line-height: 3.6rem;
   background-color: var(--bg-color);
   border-radius: 1.6rem;
-  box-shadow: 0 0 8px 2px rgba(159, 159, 159, 0.25);
+  box-shadow: 0 0 0.8rem 0.2rem rgba(159, 159, 159, 0.25);
+  &:hover {
+    background: var(--sub-color);
+    color: var(--bg-color);
+  }
+  &:active {
+    background: var(--sub-color);
+    color: var(--bg-color);
+  }
 `;
