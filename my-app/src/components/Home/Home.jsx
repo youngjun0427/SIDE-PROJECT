@@ -3,16 +3,24 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <>
-      <LogoImg src="img/test-logo.png" alt="로고" />
-      <Link to="/Options">
-        <StartBtn>START</StartBtn>
-      </Link>
-    </>
+    <HomeSection>
+      <HomeBox>
+        <LogoImg src='img/test-logo.png' alt='로고' />
+        <Link to='/Options'>
+          <StartBtn>START</StartBtn>
+        </Link>
+      </HomeBox>
+    </HomeSection>
   );
 };
 
 export default Home;
+
+const HomeSection = styled.section`
+  
+`;
+
+const HomeBox = styled.div``;
 
 const LogoImg = styled.img`
   width: 335px;

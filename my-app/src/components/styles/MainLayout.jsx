@@ -12,6 +12,11 @@ const MainLayout = ({ children }) => {
 export default MainLayout;
 
 const MainContainer = styled.div`
+  background-image: url('img/home-background.png');
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
   overflow-x: hidden;
   overflow-y: auto;
   position: relative;
@@ -20,7 +25,6 @@ const MainContainer = styled.div`
   min-height: 100vh;
   justify-content: space-between;
   margin: 0 auto;
-  background-color: #ffffff;
   box-shadow: rgb(0 0 0 / 16%) 0px 0px 8px;
 `;
 
