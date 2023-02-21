@@ -1,3 +1,10 @@
 :root {
-  width: 390px;
+  font-size: 10px;
+  --bg-color: #ffffff;
+  --main-color: #00355c;
+  --sub-color: #2496ea;
+  --text-color: #011e49;
+  --sub-text-color: #edf7ff;
+  --kakao-share-color: #391b1b;
+  --button-share-color: #757575;
 }
