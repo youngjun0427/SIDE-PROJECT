@@ -2,14 +2,13 @@ import React, { createRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Questions from '../../common/api/questionsApi.json';
 import styled from 'styled-components';
-import { blinkEffect } from '../../styles/Animation';
+import BlinkingFishImg from './LoadingAnimation';
 
 const Options = () => {
   const [loading, setLoading] = useState(false);
   const [num, setNum] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(1);
   const slideRef = createRef(null);
-
   const Navigate = useNavigate();
   const [mbti, setMbti] = useState([]);
   const [value, setValue] = useState(1);
@@ -109,11 +108,7 @@ const Options = () => {
           <LoadingBox>
             <CoralImg src='img/loading-coral.png' alt='산호 이미지' />
             <BlinkingFishBox>
-              <BlinkingFishImg src='img/loading-fish.png' alt='물고기 이미지' />
-              <BlinkingFishImg src='img/loading-fish.png' alt='물고기 이미지' />
-              <BlinkingFishImg src='img/loading-fish.png' alt='물고기 이미지' />
-              <BlinkingFishImg src='img/loading-fish.png' alt='물고기 이미지' />
-              <BlinkingFishImg src='img/loading-fish.png' alt='물고기 이미지' />
+              <BlinkingFishImg src='img/loading-fish.png' alt='물고기 이미지' delay={1000} />
             </BlinkingFishBox>
             <h2>나와 닮은 해양생물을 찾는 중이에요</h2>
           </LoadingBox>
@@ -226,10 +221,6 @@ const FishBox = styled.div`
 const FishImg = styled.img`
   width: 2.3rem;
   height: 1.8rem;
-`;
-
-const BlinkingFishImg = styled(FishImg)`
-  animation: ${blinkEffect} 1s ease-in-out infinite alternate;
 `;
 
 const BlinkingFishBox = styled(FishBox)`

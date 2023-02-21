@@ -48,7 +48,7 @@ const StartBtn = styled.button`
   width: 35.8rem;
   height: 6rem;
   color: var(--sub-color);
-  font-family: 'Poppins', sans-serif;
+  font-family: sans-serif;
   font-size: var(--fs-lg);
   font-weight: 700;
   line-height: 3.6rem;
