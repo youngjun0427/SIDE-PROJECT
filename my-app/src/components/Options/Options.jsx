@@ -1,38 +1,50 @@
-import React, { createRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Questions from '../../common/api/questionsApi.json';
 import styled from 'styled-components';
 import { blink } from '../../styles/Animation';
 
+const TOTAL_SLIDES = 12;
+
 const Options = () => {
   const [loading, setLoading] = useState(false);
-  const [num, setNum] = useState(0);
   const [currentSlide, setCurrentSlide] = useState(1);
-  const slideRef = createRef(null);
+  const slideIndex = currentSlide - 1;
+  const slideRef = useRef(null);
   const Navigate = useNavigate();
   const [mbti, setMbti] = useState([]);
-  const [value, setValue] = useState(1);
 
-  const slideFirst = () => {
-    setMbti(mbti + Questions[num].answers[0].type);
-    setNum(num + 1);
-    setCurrentSlide(currentSlide + 1);
-    slideRef.current.style.transform += 'translateX(-100vw)';
-    setValue(value + 1);
+  const handleSelectSlide = (answer) => {
+    setMbti((prev) => [...prev, Questions[slideIndex].answers[answer].type]);
+    setCurrentSlide((prev) => prev + 1);
+    // slideRef.current.style.transform = `translateX(- min(100vw, 390px))`;
   };
 
-  const slideSecond = () => {
-    setMbti(mbti + Questions[num].answers[1].type);
-    setNum(num + 1);
-    setCurrentSlide(currentSlide + 1);
-    slideRef.current.style.transform += 'translateX(-100vw)';
-    setValue(value + 1);
-  };
+  const slideFirst = () => handleSelectSlide(0);
+  const slideSecond = () => handleSelectSlide(1);
 
-  const mbtiChecker = () => {
+  // const slideFirst = () => {
+  //   setMbti(mbti + Questions[num].answers[0].type);
+  //   setNum(num + 1);
+  //   setCurrentSlide(currentSlide + 1);
+  //   slideRef.current.style.transform += 'translateX(-min(100vw, 390px))';
+  //   setValue(value + 1);
+  // };
+
+  // const slideSecond = () => {
+  //   setMbti(mbti + Questions[num].answers[1].type);
+  //   setNum(num + 1);
+  //   setCurrentSlide(currentSlide + 1);
+  //   slideRef.current.style.transform += 'translateX(-min(100vw, 390px))';
+  //   setValue(value + 1);
+  // };
+
+  const mbtiChecker = useCallback(() => {
     setLoading(true);
+
     let map = {};
     let result = [];
+
     for (let i = 0; i < mbti.length; i++) {
       if (mbti[i] in map) {
         map[mbti[i]] += 1;
@@ -40,6 +52,7 @@ const Options = () => {
         map[mbti[i]] = 1;
       }
     }
+
     for (let count in map) {
       if (map[count] >= 2) {
         result.push(count);
@@ -50,21 +63,18 @@ const Options = () => {
       const examResult = result.join('');
       Navigate(`/result/${examResult}`);
     }, 3000);
-  };
-
-  const TOTAL_SLIDES = 12;
+  }, [mbti, Navigate]);
 
   useEffect(() => {
     currentSlide > TOTAL_SLIDES && mbtiChecker();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentSlide]);
+  }, [currentSlide, mbtiChecker]);
 
   return (
     <>
       <OptionsSection id='root'>
         {!loading && (
           <>
-            <OptionsSlider ref={slideRef}>
+            <OptionsSlider ref={slideRef} slideIndex={slideIndex}>
               {Questions.map((item) => {
                 return (
                   <OptionsContent key={item.id}>
@@ -74,7 +84,7 @@ const Options = () => {
                     </LogoBox>
                     <ProgressBox>
                       <ProgressBar>
-                        <Progressgauge value={value} />
+                        <Progressgauge value={currentSlide} />
                       </ProgressBar>
                       <TotalSlides>
                         <span>{currentSlide}</span>
@@ -135,6 +145,10 @@ const OptionsSlider = styled.div`
   width: 1200vw;
   margin: 0 auto;
   transition: transform 0.3s ease-in-out;
+  transform: ${({ slideIndex }) => `translateX(-${390 * slideIndex}px)`};
+  @media (max-width: 390px) {
+    transform: ${({ slideIndex }) => `translateX(-${100 * slideIndex}vw)`};
+  }
 `;
 
 const OptionsContent = styled.div`

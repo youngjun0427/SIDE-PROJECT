@@ -20,7 +20,6 @@ const MainContainer = styled.div`
   margin: 0 auto;
   overflow-x: hidden;
   overflow-y: auto;
-  /* justify-content: space-between; */
   box-shadow: rgb(0 0 0 / 16%) 0px 0px 8px;
 `;
 
