@@ -79,10 +79,10 @@ const Options = () => {
                       <ProgressBar>
                         <Progressgauge value={currentSlide} />
                       </ProgressBar>
-                      <TotalSlides>
+                      <SlideBox>
                         <span>{currentSlide}</span>
                         <span>/{TOTAL_SLIDES}</span>
-                      </TotalSlides>
+                      </SlideBox>
                     </ProgressBox>
                     <Question question={item.question} />
                     <ButtonBox>
@@ -176,7 +176,7 @@ const ProgressBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 0 auto 3.2rem;
+  margin: 0.5rem auto 3.2rem;
 `;
 
 const ProgressBar = styled.div`
@@ -198,7 +198,7 @@ const ButtonBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
   margin-top: 64px;
   position: relative;
 
@@ -218,6 +218,14 @@ const ButtonBox = styled.div`
     line-height: 1.8rem;
   }
 
+  @media (hover: hover) {
+    // 모바일 기기에서 hover 스타일 적용되지 않게 함
+    button:hover {
+      background-color: var(--sub-color);
+      color: var(--bg-color);
+    }
+  }
+
   & button::before {
     content: '';
     background-image: url('img/options-text-bullet.png');
@@ -228,15 +236,16 @@ const ButtonBox = styled.div`
     height: 2rem;
   }
 
-  & button:hover {
+  /* & button:hover {
     background-color: var(--sub-color);
     color: var(--bg-color);
-  }
+  } */
 `;
 
-const TotalSlides = styled.div`
+const SlideBox = styled.div`
   width: 3rem;
   color: var(--sub-color);
+  font-family: 'Noto Sans';
   font-weight: 700;
   font-size: var(--fs-xs);
   line-height: 1.9rem;
@@ -246,7 +255,7 @@ const QuestionText = styled.span`
   color: var(--main-color);
   font-weight: 400;
   font-size: var(--fs-xl);
-  line-height: 141.2%;
+  line-height: 120%;
 `;
 
 const LoadingBox = styled.div`
