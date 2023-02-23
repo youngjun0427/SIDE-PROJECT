@@ -149,36 +149,41 @@ const OptionsContent = styled.div`
 
 const LogoBox = styled.div`
   flex-direction: column;
+  margin-bottom: 6.5rem;
 
   & img {
-    width: 240px;
-    height: 115px;
-    margin: 56px 75px 15px;
+    width: 24rem;
+    height: 11.5rem;
+    margin: 5.6rem 7.5rem 1.5rem;
+  }
 
-    & h1 {
-      margin-left: 83px;
-    }
+  & h1 {
+    color: var(--main-color);
+    font-weight: 400;
+    font-size: var(--fs-lg);
   }
 `;
 
 const ProgressBox = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  justify-content: space-between;
+  margin: 0 auto 3.2rem;
 `;
 
 const ProgressBar = styled.div`
-  width: 3.2rem;
+  width: 32rem;
   height: 1.1rem;
   border-radius: 1rem;
-  background: #ece9e9;
+  margin-right: 0.8rem;
+  background: var(--progress-back-color);
 `;
 
 const Progressgauge = styled.div`
   width: ${({ value }) => `${(100 / 12) * value}%`};
   height: 100%;
-  border-radius: 10px;
-  background-color: #2496ea;
+  border-radius: 1rem;
+  background-color: var(--sub-color);
 `;
 
 const ButtonBox = styled.div`
@@ -191,7 +196,13 @@ const ButtonBox = styled.div`
   }
 `;
 
-const TotalSlides = styled.div``;
+const TotalSlides = styled.div`
+  width: 3rem;
+  color: var(--sub-color);
+  font-weight: 700;
+  font-size: var(--fs-xs);
+  line-height: 1.9rem;
+`;
 
 const Question = styled.span``;
 
