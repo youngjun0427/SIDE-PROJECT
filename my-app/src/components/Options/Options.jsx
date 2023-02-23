@@ -161,11 +161,24 @@ const LogoBox = styled.div`
   }
 `;
 
+const ProgressBox = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+`;
+
 const ProgressBar = styled.div`
-  width: 320px;
-  height: 11px;
-  border-radius: 10px;
+  width: 3.2rem;
+  height: 1.1rem;
+  border-radius: 1rem;
   background: #ece9e9;
+`;
+
+const Progressgauge = styled.div`
+  width: ${({ value }) => `${(100 / 12) * value}%`};
+  height: 100%;
+  border-radius: 10px;
+  background-color: #2496ea;
 `;
 
 const ButtonBox = styled.div`
@@ -181,19 +194,6 @@ const ButtonBox = styled.div`
 const TotalSlides = styled.div``;
 
 const Question = styled.span``;
-
-const Progressgauge = styled.div`
-  width: ${({ value }) => `${(100 / 12) * value}%`};
-  height: 100%;
-  border-radius: 10px;
-  background-color: #2496ea;
-`;
-
-const ProgressBox = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-`;
 
 const LoadingBox = styled.div`
   position: relative;
