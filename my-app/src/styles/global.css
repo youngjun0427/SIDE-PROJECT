@@ -5,6 +5,7 @@
   --fs-md: 18px;
   --fs-lg: 24px;
   --fs-xl: 28px;
+  --fs-mx: 40px;
   --bg-color: #ffffff;
   --main-color: #00355c;
   --sub-color: #2496ea;
@@ -15,4 +16,5 @@
   --progress-back-color: #ece9e9;
   --button-back-color: #f1f3fd;
   --result-back-color: #86c7ff;
+  --result-name-color: #00528e;
 }

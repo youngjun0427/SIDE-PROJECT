@@ -13,7 +13,6 @@ export default MainLayout;
 
 const MainContainer = styled.div`
   position: relative;
-  /* width: 100vw; */
   max-width: 390px;
   height: 100%;
   min-height: 100vh;

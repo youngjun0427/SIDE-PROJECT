@@ -46,72 +46,114 @@ const Result = () => {
   };
 
   return (
-    <>
-      <ResultSection key={nation.id}>
+    <ResultSection key={nation.id}>
+      <>
+        <Link to='/'>
+          <LogoImg src='../img/test-logo.png' alt='로고 이미지' />
+        </Link>
+      </>
+      <ResultBox>
+        <h1>{nation.subject}</h1>
+        <ImgBox>
+          <img src={nation.img} alt='img' />
+        </ImgBox>
+        <span>{nation.features[0]}</span>
+        <span>{nation.features[1]}</span>
+        <ul>
+          {nation.description.map((item, index) => {
+            return <li key={index}>{item.des}</li>;
+          })}
+        </ul>
+      </ResultBox>
+      <div>
+        <h2>{nation.name}와 유형별 궁합</h2>
         <div>
-          <>
-            <Link to='/'>
-              <LogoImg src='../img/test-logo.png' alt='로고 이미지' />
-            </Link>
-          </>
-          <h1>{nation.subject}</h1>
+          <Link to={`${/result/}${nation.duo[0].subhead}`}>
+            <img src={nation.duo[0].img} alt='mbti캐릭터' />
+          </Link>
           <div>
-            <img src={nation.img} alt='img' />
-            <br />
-          </div>
-          <ul>
-            {nation.description.map((item, index) => {
-              return <li key={index}>{item.des}</li>;
-            })}
-          </ul>
-          <div>
-            <h2>{nation.name}와 유형별 궁합</h2>
-            <div>
-              <Link to={`${/result/}${nation.duo[0].subhead}`}>
-                <img src={nation.duo[0].img} alt='mbti캐릭터' />
-              </Link>
-              <div>
-                <h4>Good</h4>
-                <p>{nation.duo[0].subhead}</p>
-                <p>{nation.duo[0].des}</p>
-              </div>
-            </div>
-            <div>
-              <Link to={`${/result/}${nation.counter[0].subhead}`}>
-                <img src={nation.counter[0].img} alt='mbti캐릭터' />
-              </Link>
-              <div>
-                <h4>Bad</h4>
-                <p>{nation.counter[0].subhead}</p>
-                <p>{nation.counter[0].des}</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <button onClick={shareToKakaotalk}>카톡공유</button>
-          </div>
-          <div>
-            <Link to='/'>다시하기</Link>
-            <CopyToClipboard text={url}>
-              <button onClick={copyAlert}>링크복사</button>
-            </CopyToClipboard>
+            <h4>Good</h4>
+            <p>{nation.duo[0].subhead}</p>
+            <p>{nation.duo[0].des}</p>
           </div>
         </div>
-      </ResultSection>
-    </>
+        <div>
+          <Link to={`${/result/}${nation.counter[0].subhead}`}>
+            <img src={nation.counter[0].img} alt='mbti캐릭터' />
+          </Link>
+          <div>
+            <h4>Bad</h4>
+            <p>{nation.counter[0].subhead}</p>
+            <p>{nation.counter[0].des}</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button onClick={shareToKakaotalk}>카톡공유</button>
+      </div>
+      <div>
+        <Link to='/'>다시하기</Link>
+        <CopyToClipboard text={url}>
+          <button onClick={copyAlert}>링크복사</button>
+        </CopyToClipboard>
+      </div>
+    </ResultSection>
   );
 };
 export default Result;
 
 const ResultSection = styled.section`
-background-image: url('/img/result-background.png');
-background-size: cover;
-background-color: var(--);
+  background-image: url('/img/result-background.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: var(--result-back-color);
+  overflow: hidden;
+
+  /* ::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    background-color: transparent;
+  } */
 `;
 
 const LogoImg = styled.img`
   src: url('img/test-logo.png');
   width: 11rem;
   height: 5rem;
-  margin: 17px auto 0;
+  margin: 1.7rem auto 7rem;
+`;
+
+const ResultBox = styled.div`
+  & h1 {
+    font-weight: 400;
+    font-size: var(--fs-mx);
+    line-height: 120%;
+    color: var(--result-name-color);
+    margin-bottom: 2.4rem;
+  }
+
+  & span,
+  ul {
+    font-weight: 400;
+    font-size: var(--fs-sm);
+    line-height: 141.2%;
+    color: var(--text-color);
+    margin: 0 3rem;
+  }
+`;
+
+const ImgBox = styled.div`
+  width: 35rem;
+  height: 35rem;
+  background-image: url('/img/result-img-background.png');
+  background-size: cover;
+  margin: 0 auto 4rem;
+  display: flex;
+  align-items: center;
+
+  & img {
+    width: 25rem;
+    height: 25rem;
+    margin: 0 auto;
+  }
 `;
