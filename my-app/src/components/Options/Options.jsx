@@ -17,27 +17,10 @@ const Options = () => {
   const handleSelectSlide = (answer) => {
     setMbti((prev) => [...prev, Questions[slideIndex].answers[answer].type]);
     setCurrentSlide((prev) => prev + 1);
-    // slideRef.current.style.transform = `translateX(- min(100vw, 390px))`;
   };
 
   const slideFirst = () => handleSelectSlide(0);
   const slideSecond = () => handleSelectSlide(1);
-
-  // const slideFirst = () => {
-  //   setMbti(mbti + Questions[num].answers[0].type);
-  //   setNum(num + 1);
-  //   setCurrentSlide(currentSlide + 1);
-  //   slideRef.current.style.transform += 'translateX(-min(100vw, 390px))';
-  //   setValue(value + 1);
-  // };
-
-  // const slideSecond = () => {
-  //   setMbti(mbti + Questions[num].answers[1].type);
-  //   setNum(num + 1);
-  //   setCurrentSlide(currentSlide + 1);
-  //   slideRef.current.style.transform += 'translateX(-min(100vw, 390px))';
-  //   setValue(value + 1);
-  // };
 
   const mbtiChecker = useCallback(() => {
     setLoading(true);
@@ -155,8 +138,6 @@ const OptionsContent = styled.div`
   float: left;
   display: flex;
   flex-direction: column;
-  /* text-align: center; */
-  /* margin: 0 auto; */
   width: 100vw;
   max-width: 390px;
 `;
