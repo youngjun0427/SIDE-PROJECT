@@ -52,6 +52,16 @@ const Options = () => {
     currentSlide > TOTAL_SLIDES && mbtiChecker();
   }, [currentSlide, mbtiChecker]);
 
+  function Question({ question }) {
+    const questionText = question.replace(/\n/g, '<br />'); // 줄바꿈 문자열을 <br /> 태그로 변환
+
+    return (
+      <pre>
+        <span dangerouslySetInnerHTML={{ __html: questionText }} />
+      </pre>
+    );
+  }
+
   return (
     <>
       <OptionsSection id='root'>
@@ -74,7 +84,8 @@ const Options = () => {
                         <span>/{TOTAL_SLIDES}</span>
                       </TotalSlides>
                     </ProgressBox>
-                    <Question>{item.question}</Question>
+                    {/* <Question>{item.question}</Question> */}
+                    <Question question={item.question} />
                     <ButtonBox>
                       <button
                         onClick={() => {
@@ -232,10 +243,11 @@ const TotalSlides = styled.div`
   line-height: 1.9rem;
 `;
 
-const Question = styled.div`
+const Question = styled.pre`
   color: var(--main-color);
   font-weight: 400;
   font-size: var(--fs-xl);
+  white-space: pre-wrap;
 `;
 
 const LoadingBox = styled.div`
