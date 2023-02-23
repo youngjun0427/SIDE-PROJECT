@@ -2,7 +2,7 @@ import React, { createRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Questions from '../../common/api/questionsApi.json';
 import styled from 'styled-components';
-import BlinkingFishImg from './LoadingAnimation';
+import { motion, blink } from '../../styles/Animation';
 
 const Options = () => {
   const [loading, setLoading] = useState(false);
@@ -107,9 +107,13 @@ const Options = () => {
         {loading && (
           <LoadingBox>
             <CoralImg src='img/loading-coral.png' alt='산호 이미지' />
-            <BlinkingFishBox>
-              <BlinkingFishImg src='img/loading-fish.png' alt='물고기 이미지' delay={1000} />
-            </BlinkingFishBox>
+            <FishBox>
+              <FishImg src='img/loading-fish.png' alt='물고기 이미지' />
+              <FishImg delay={0.2} src='img/loading-fish.png' alt='물고기 이미지' />
+              <FishImg delay={0.4} src='img/loading-fish.png' alt='물고기 이미지' />
+              <FishImg delay={0.6} src='img/loading-fish.png' alt='물고기 이미지' />
+              <FishImg delay={0.8} src='img/loading-fish.png' alt='물고기 이미지' />
+            </FishBox>
             <h2>나와 닮은 해양생물을 찾는 중이에요</h2>
           </LoadingBox>
         )}
@@ -207,26 +211,24 @@ const LoadingBox = styled.div`
 `;
 
 const CoralImg = styled.img`
-  margin-top: 28.2rem;
+  margin-top: 23rem;
   width: 10.4rem;
   height: 8.6rem;
   align-items: center;
   justify-content: center;
+  animation: ${motion} 0.6s linear 0s infinite alternate;
 `;
 
 const FishBox = styled.div`
   display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  margin-top: 40px;
 `;
 
 const FishImg = styled.img`
   width: 2.3rem;
   height: 1.8rem;
-`;
-
-const BlinkingFishBox = styled(FishBox)`
-  display: flex;
-
-  & ${BlinkingFishImg}:not(:last-child) {
-    margin-right: 1rem;
-  }
+  animation: ${blink} 1s linear infinite;
+  animation-delay: ${(props) => (props.delay ? `${props.delay}s` : 0)};
 `;

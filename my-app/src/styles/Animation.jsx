@@ -20,16 +20,6 @@ export const fadeOut = keyframes`
   }
 `;
 
-export const spin = keyframes`
-  from {
-    transform: rotate(0);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-`;
-
 export const motion = keyframes`
 0% {
   transform: translateY(0);
@@ -40,8 +30,12 @@ export const motion = keyframes`
 }
 `;
 
-export const blinkEffect = keyframes`
-  50% {
+export const blink = keyframes`
+  0% {
     opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 `;

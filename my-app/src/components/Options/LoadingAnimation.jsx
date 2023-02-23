@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { css } from 'styled-components';
 import { blinkEffect } from '../../styles/Animation';
-import PropTypes from 'prop-types';
 
 const BlinkingFishImg = ({ delay }) => {
   const [visible, setVisible] = useState(false);
