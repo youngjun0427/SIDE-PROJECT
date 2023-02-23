@@ -57,7 +57,7 @@ const Options = () => {
 
     return (
       <pre>
-        <span dangerouslySetInnerHTML={{ __html: questionText }} />
+        <QuestionText dangerouslySetInnerHTML={{ __html: questionText }} />
       </pre>
     );
   }
@@ -84,7 +84,6 @@ const Options = () => {
                         <span>/{TOTAL_SLIDES}</span>
                       </TotalSlides>
                     </ProgressBox>
-                    {/* <Question>{item.question}</Question> */}
                     <Question question={item.question} />
                     <ButtonBox>
                       <button
@@ -243,11 +242,11 @@ const TotalSlides = styled.div`
   line-height: 1.9rem;
 `;
 
-const Question = styled.pre`
+const QuestionText = styled.span`
   color: var(--main-color);
   font-weight: 400;
   font-size: var(--fs-xl);
-  white-space: pre-wrap;
+  line-height: 141.2%;
 `;
 
 const LoadingBox = styled.div`
