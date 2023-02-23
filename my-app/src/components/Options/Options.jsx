@@ -119,15 +119,17 @@ export default Options;
 
 const OptionsSection = styled.section`
   display: flex;
-  width: 100%;
   overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
 `;
 
 const OptionsSlider = styled.div`
   display: flex;
   width: 1200vw;
   margin: 0 auto;
-  transition: transform 0.3s ease-in-out;
+  /* transition: transform 0.3s ease-in-out; */
   transform: ${({ slideIndex }) => `translateX(-${390 * slideIndex}px)`};
   @media (max-width: 390px) {
     transform: ${({ slideIndex }) => `translateX(-${100 * slideIndex}vw)`};
@@ -135,11 +137,12 @@ const OptionsSlider = styled.div`
 `;
 
 const OptionsContent = styled.div`
-  float: left;
   display: flex;
   flex-direction: column;
   width: 100vw;
   max-width: 390px;
+  background-image: url('/img/options-background.png');
+  background-size: cover;
 `;
 
 const LogoBox = styled.div`
@@ -184,10 +187,40 @@ const Progressgauge = styled.div`
 const ButtonBox = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 64px;
+  position: relative;
 
   & button {
-    display: flex;
-    justify-content: center;
+    display: inline-block;
+    text-align: left;
+    padding-left: 44px;
+    background-color: var(--button-back-color);
+    width: 35.8rem;
+    height: 6rem;
+    box-shadow: 0 3px 5px rgba(164, 166, 171, 0.25);
+    border-radius: 1.6rem;
+    align-items: center;
+    color: var(--button-share-color);
+    font-weight: 400;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+  }
+
+  & button::before {
+    content: '';
+    background-image: url('img/options-text-bullet.png');
+    background-size: cover;
+    position: absolute;
+    left: 32px;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  & button:hover {
+    background-color: var(--sub-color);
+    color: var(--bg-color);
   }
 `;
 
@@ -199,7 +232,11 @@ const TotalSlides = styled.div`
   line-height: 1.9rem;
 `;
 
-const Question = styled.span``;
+const Question = styled.div`
+  color: var(--main-color);
+  font-weight: 400;
+  font-size: var(--fs-xl);
+`;
 
 const LoadingBox = styled.div`
   position: relative;
