@@ -65,38 +65,39 @@ const Result = () => {
           })}
         </ul>
       </ResultBox>
+      <DuoTextCont>
+        <img src='/img/result-duo-bubble.png' alt='거품이미지' />
+        <span>{nation.name}의 유형별 궁합</span>
+      </DuoTextCont>
       <DuoBox>
-        <h2>{nation.name}의 유형별 궁합</h2>
-        <div>
+        <DuoCont>
           <Link to={`${/result/}${nation.duo[0].subhead}`}>
             <img src={nation.duo[0].img} alt='mbti캐릭터' />
           </Link>
           <div>
             <h4>Good</h4>
-            <p>{nation.duo[0].subhead}</p>
             <p>{nation.duo[0].des}</p>
           </div>
-        </div>
-        <div>
+        </DuoCont>
+        <DuoCont>
           <Link to={`${/result/}${nation.counter[0].subhead}`}>
             <img src={nation.counter[0].img} alt='mbti캐릭터' />
           </Link>
           <div>
             <h4>Bad</h4>
-            <p>{nation.counter[0].subhead}</p>
             <p>{nation.counter[0].des}</p>
           </div>
-        </div>
+        </DuoCont>
       </DuoBox>
-      <div>
+      <ButtonBox>
         <button onClick={shareToKakaotalk}>카톡공유</button>
-      </div>
-      <div>
-        <Link to='/'>다시하기</Link>
+        <Link to='/'>
+          <button>다시하기</button>
+        </Link>
         <CopyToClipboard text={url}>
           <button onClick={copyAlert}>링크복사</button>
         </CopyToClipboard>
-      </div>
+      </ButtonBox>
     </ResultSection>
   );
 };
@@ -170,10 +171,63 @@ const ImgBox = styled.div`
 `;
 
 const DuoBox = styled.div`
-  & h2 {
+  display: flex;
+  margin: 0 auto 4.8rem;
+  gap: 0.8rem;
+  justify-content: center;
+`;
+
+const DuoTextCont = styled.div`
+  display: flex;
+  gap: 0.8rem;
+  text-align: center;
+  margin-bottom: 1.6rem;
+  justify-content: center;
+
+  & span {
     font-weight: 400;
     font-size: var(--fs-lg);
     line-height: 141.2%;
     color: var(--sub-text-color);
+  }
+
+  & img {
+    width: 2.3rem;
+    height: 3.2rem;
+  }
+`;
+
+const DuoCont = styled.div`
+  & img {
+    width: 17.5rem;
+    height: 17.5rem;
+    box-shadow: 0 2px 9px rgba(168, 168, 168, 0.25);
+    background-color: var(--bg-color);
+    border-radius: 1.6rem;
+    margin-bottom: 0.8rem;
+  }
+
+  & h4,
+  p {
+    font-weight: 400;
+    font-size: var(--fs-md);
+    line-height: 141.2%;
+    color: var(--text-color);
+  }
+`;
+
+const ButtonBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  justify-content: center;
+
+  & {
+  }
+
+  & button {
+    width: 35.8rem;
+    height: 4.8rem;
+    border-radius: 10rem;
   }
 `;

@@ -3,7 +3,7 @@
     "id": "INTJ",
     "name": "북극곰",
     "subject": "고독한 북극곰",
-    "img": "../../img/INTJ 북극곰.png",
+    "img": "/img/INTJ 북극곰.png",
     "features": [
       {
         "des": "독립적이며 혼자 일하는 것을 좋아하는 북극곰은 새끼 때를 제외하면 주로 혼자 수영하고 사냥을 해요!"
@@ -31,14 +31,14 @@
     ],
     "duo": [
       {
-        "img": "../../img/ESFP 가시해마.png",
+        "img": "/img/ESFP 가시해마.png",
         "subhead": "ESFP",
         "des": "재기발랄한 가시해마"
       }
     ],
     "counter": [
       {
-        "img": "../../img/ESFJ 혹등고래.png",
+        "img": "/img/ESFJ 혹등고래.png",
         "subhead": "ESFJ",
         "des": "사려깊은 혹등고래"
       }
@@ -48,7 +48,7 @@
     "id": "INTP",
     "name": "문어",
     "subject": "논리적인 문어",
-    "img": "../../img/INTP 문어.png",
+    "img": "/img/INTP 문어.png",
     "features": [
       {
         "des": "글월 문(文) 물고기 어(魚) 이름에 걸맞게 아주 똑똑한 문어는 사람처럼 의사소통이 가능한 동물이며 도구를 다룰 줄 알아요."
@@ -73,14 +73,14 @@
     ],
     "duo": [
       {
-        "img": "../../img/ESFJ 혹등고래.png",
+        "img": "/img/ESFJ 혹등고래.png",
         "subhead": "ESFJ",
         "des": "사려깊은 혹등고래"
       }
     ],
     "counter": [
       {
-        "img": "../../img/ESFP 가시해마.png",
+        "img": "/img/ESFP 가시해마.png",
         "subhead": "ESFP",
         "des": "재기발랄한 가시해마"
       }
@@ -90,7 +90,7 @@
     "id": "INFJ",
     "name": "정어리",
     "subject": "의로운 정어리",
-    "img": "../../img/INFJ 정어리.png",
+    "img": "/img/INFJ 정어리.png",
     "features": [
       {
         "des": "공동체의 이익을 중시하는 정어리는 청어과의 작은 물고기에요."
@@ -115,14 +115,14 @@
     ],
     "duo": [
       {
-        "img": "../../img/ESTP 흰동가리.png",
+        "img": "/img/ESTP 흰동가리.png",
         "subhead": "ESTP",
         "des": "모험을 즐기는 흰동가리"
       }
     ],
     "counter": [
       {
-        "img": "../../img/ESTJ 황제펭귄.png",
+        "img": "/img/ESTJ 황제펭귄.png",
         "subhead": "ESTP",
         "des": "법 없이도 살 황제펭귄"
       }
@@ -132,7 +132,7 @@
     "id": "INFP",
     "name": "상괭이",
     "subject": "수줍은 미소의 상괭이",
-    "img": "../../img/INFP 상괭이.png",
+    "img": "/img/INFP 상괭이.png",
     "features": [
       {
         "des": "온화하고 배려심이 많은 상괭이! '웃는 고래'로 잘 알려져 있어요."
@@ -157,14 +157,14 @@
     ],
     "duo": [
       {
-        "img": "../../img/ESTJ 황제펭귄.png",
+        "img": "/img/ESTJ 황제펭귄.png",
         "subhead": "ENFJ",
         "des": "법 없이도 살 황제펭귄"
       }
     ],
     "counter": [
       {
-        "img": "../../img/ESTP 흰동가리.png",
+        "img": "/img/ESTP 흰동가리.png",
         "subhead": "ESFJ",
         "des": "모험을 즐기는 흰동가리"
       }
@@ -174,7 +174,7 @@
     "id": "ISTJ",
     "name": "해삼",
     "subject": "부지런하고 깔끔한 해삼",
-    "img": "../../img/ISTJ 해삼.png",
+    "img": "/img/ISTJ 해삼.png",
     "features": [
       {
         "des": "바다의 청소부! 해삼은 '바다의 삼'이라는 의미로 풍부한 영양소로 사랑받는 식재료이기도 합니다."
@@ -199,14 +199,14 @@
     ],
     "duo": [
       {
-        "img": "../../img/ENFP 돌고래.png",
+        "img": "/img/ENFP 돌고래.png",
         "subhead": "ENFP",
         "des": "연예인 체질 돌고래"
       }
     ],
     "counter": [
       {
-        "img": "../../img/ENFJ 개복치.png",
+        "img": "/img/ENFJ 개복치.png",
         "subhead": "ENFJ",
         "des": "감성충만 개복치"
       }
@@ -216,7 +216,7 @@
     "id": "ISFJ",
     "name": "푸른바다거북",
     "subject": "책임감이 강한 푸른바다거북",
-    "img": "../../img/ISFJ 푸른바다거북.png",
+    "img": "/img/ISFJ 푸른바다거북.png",
     "features": [
       {
         "des": "먼 바다를 떠돌아 다니다가도 산란기가 되면 자신이 태어난 해변이나 모래사장 인근으로 찾아와 산란하는 특징이 있어요."
@@ -241,14 +241,14 @@
     ],
     "duo": [
       {
-        "img": "../../img/ENTP 갑오징어.png",
+        "img": "/img/ENTP 갑오징어.png",
         "subhead": "ENTP",
         "des": "창의적인 갑오징어"
       }
     ],
     "counter": [
       {
-        "img": "../../img/ENTJ 바다사자.png",
+        "img": "/img/ENTJ 바다사자.png",
         "subhead": "ENTP",
         "des": "호기심 넘치는 바다사자"
       }
@@ -258,7 +258,7 @@
     "id": "ISTP",
     "name": "성게",
     "subject": "게으른 천재 성게",
-    "img": "../../img/ISTP 성게.png",
+    "img": "/img/ISTP 성게.png",
     "features": [
       {
         "des": "차분하지만 민첩하게 상황을 파악하는 성게는 상황 변화에 능숙하게 적응하기로 유명합니다."
@@ -283,14 +283,14 @@
     ],
     "duo": [
       {
-        "img": "../../img//ENFJ 개복치.png",
+        "img": "/img//ENFJ 개복치.png",
         "subhead": "ENFJ",
         "des": "감성적인 개복치"
       }
     ],
     "counter": [
       {
-        "img": "../../img/ENFP 돌고래.png",
+        "img": "/img/ENFP 돌고래.png",
         "subhead": "ENFP",
         "des": "연예인 체질 돌고래"
       }
@@ -300,7 +300,7 @@
     "id": "ISFP",
     "name": "그린란드 상어",
     "subject": "낙천주의자 그린란드 상어",
-    "img": "../../img/ISFP 그린란드상어",
+    "img": "/img/ISFP 그린란드상어",
     "features": [
       {
         "des": "온화하며 삶의 여유를 만끽하는 그린란드 상어는 최소 수명이 400년으로 예상되는 척추동물 가운데 가장 오래 사는 동물이에요."
@@ -325,14 +325,14 @@
     ],
     "duo": [
       {
-        "img": "../../img/ENTJ 바다사자.png",
+        "img": "/img/ENTJ 바다사자.png",
         "subhead": "ESFJ",
         "des": "호기심 넘치는 바다사자"
       }
     ],
     "counter": [
       {
-        "img": "../../img/ENTP 갑오징어.png",
+        "img": "/img/ENTP 갑오징어.png",
         "subhead": "ENTJ",
         "des": "창의적인 갑오징어"
       }
@@ -342,7 +342,7 @@
     "id": "ESTP",
     "name": "흰동가리",
     "subject": "모험을 즐기는 흰동가리",
-    "img": "../../img/ESTP 흰동가리.png",
+    "img": "/img/ESTP 흰동가리.png",
     "features": [
       {
         "des": "흰동가리는 타협적이고 현실적 문제 해결에 능숙해 말미잘과의 타협적인 관계 속에서 문제를 해결합니다."
@@ -367,14 +367,14 @@
     ],
     "duo": [
       {
-        "img": "../../img/INFJ 정어리.png",
+        "img": "/img/INFJ 정어리.png",
         "subhead": "INFJ",
         "des": "의로운 정어리"
       }
     ],
     "counter": [
       {
-        "img": "../../img/INFP 상괭이.png",
+        "img": "/img/INFP 상괭이.png",
         "subhead": "INFJ",
         "des": "수줍은 미소의 상괭이"
       }
@@ -384,7 +384,7 @@
     "id": "ENFP",
     "name": "돌고래",
     "subject": "연애인 체질 돌고래",
-    "img": "../../img/ENFP 돌고래.png",
+    "img": "/img/ENFP 돌고래.png",
     "features": [
       {
         "des": "돌고래는 호기심이 많고 개방적인 성격을 가져 사람에게도 우호적일만큼 '바다의 인싸'에요!"
@@ -409,14 +409,14 @@
     ],
     "duo": [
       {
-        "img": "../../img/ISTJ 해삼.png",
+        "img": "/img/ISTJ 해삼.png",
         "subhead": "ISFJ",
         "des": "부지런하고 깔끔한 해삼"
       }
     ],
     "counter": [
       {
-        "img": "../../img/ISTP 성게.png",
+        "img": "/img/ISTP 성게.png",
         "subhead": "INTJ",
         "des": "게으른 천재 성게"
       }
@@ -426,7 +426,7 @@
     "id": "ENTJ",
     "name": "바다사자",
     "subject": "호기심 넘치는 바다사자",
-    "img": "../../img/ENTJ 바다사자.png",
+    "img": "/img/ENTJ 바다사자.png",
     "features": [
       {
         "des": "바다사자는 호기심이 왕성하고 다재다능합니다. 주로 연안지역에서 생활하는 것으로 알려져 있지만, 강 하구나 먼 바다에서 발견되기로 해요."
@@ -451,14 +451,14 @@
     ],
     "duo": [
       {
-        "img": "../../img/ISFP 그린란드상어",
+        "img": "/img/ISFP 그린란드상어",
         "subhead": "ISFP",
         "des": "낙천주의자 그린란드 상어"
       }
     ],
     "counter": [
       {
-        "img": "../../img/ISFJ 푸른바다거북.png",
+        "img": "/img/ISFJ 푸른바다거북.png",
         "subhead": "ISFJ",
         "des": "책임감이 강한 푸른바다거북"
       }
@@ -468,7 +468,7 @@
     "id": "ENTP",
     "name": "갑오징어",
     "subject": "창의적인 갑오징어",
-    "img": "../../img/ENTP 갑오징어.png",
+    "img": "/img/ENTP 갑오징어.png",
     "features": [
       {
         "des": "갑오징어는 바다의 카멜레온이라고 불릴만큼 수백만 가지 색으로 변신을 할 수 있답니다."
@@ -493,14 +493,14 @@
     ],
     "duo": [
       {
-        "img": "../../img/ISFJ 푸른바다거북.png",
+        "img": "/img/ISFJ 푸른바다거북.png",
         "subhead": "ISFJ",
         "des": "책임감이 강한 푸른바다거북"
       }
     ],
     "counter": [
       {
-        "img": "../../img/ISFP 그린란드상어",
+        "img": "/img/ISFP 그린란드상어",
         "subhead": "ISFP",
         "des": "낙천주의자 그린란드 상어"
       }
@@ -510,7 +510,7 @@
     "id": "ENFJ",
     "name": "개복치",
     "subject": "감수성 넘치는 개복치",
-    "img": "../../img/ENFJ 개복치.png",
+    "img": "/img/ENFJ 개복치.png",
     "features": [
       {
         "des": "타인의 의견을 존중해주는 한편, 비판에는 예민하게 반응하는 개복치!"
@@ -535,14 +535,14 @@
     ],
     "duo": [
       {
-        "img": "../../img/ISTP 성게.png",
+        "img": "/img/ISTP 성게.png",
         "subhead": "ISTP",
         "des": "게으른 천재 성게"
       }
     ],
     "counter": [
       {
-        "img": "../../img/ISTJ 해삼.png",
+        "img": "/img/ISTJ 해삼.png",
         "subhead": "ISTJ",
         "des": "부지런하고 깔끔한 해삼"
       }
@@ -552,7 +552,7 @@
     "id": "ESFP",
     "name": "가시해마",
     "subject": "재기발랄한 가시해마",
-    "img": "../../img/ESFP 가시해마.png",
+    "img": "/img/ESFP 가시해마.png",
     "features": [
       {
         "des": "열정적이고 순발력이 뛰어난 가시해마!"
@@ -577,14 +577,14 @@
     ],
     "duo": [
       {
-        "img": "../../img/INTJ 북극곰.png",
+        "img": "/img/INTJ 북극곰.png",
         "subhead": "INTJ",
         "des": "고독한 북극곰"
       }
     ],
     "counter": [
       {
-        "img": "../../img/INTP 문어.png",
+        "img": "/img/INTP 문어.png",
         "subhead": "ISTJ",
         "des": "논리적인 문어"
       }
@@ -594,7 +594,7 @@
     "id": "ESTJ",
     "name": "황제펭귄",
     "subject": "법 없이도 살 황제펭귄",
-    "img": "../../img/ESTJ 황제펭귄.png",
+    "img": "/img/ESTJ 황제펭귄.png",
     "features": [
       {
         "des": "체계적이며 규칙을 잘 준수하는 황제펭귄은 남극의 추위를 견디기 위하여 같은 무리끼리 '허들링'이라는 규칙을 만들어서 따릅니다."
@@ -639,7 +639,7 @@
     "id": "ESFJ",
     "name": "혹등고래",
     "subject": "사려깊은 혹등고래",
-    "img": "../../img/ESFJ 혹등고래.png",
+    "img": "/img/ESFJ 혹등고래.png",
     "features": [
       {
         "des": "사람에 대한 관심이 많고 친절하여 동정심이 많은 혹등고래는 바다의 수호자라고 불리울 만큼 사려깊고 정의로운 해양생물이에요."
@@ -664,14 +664,14 @@
     ],
     "duo": [
       {
-        "img": "../../img/INTP 문어.png",
+        "img": "/img/INTP 문어.png",
         "subhead": "INTP",
         "des": "논리적인 문어"
       }
     ],
     "counter": [
       {
-        "img": "../../img/INTJ 북극곰.png",
+        "img": "/img/INTJ 북극곰.png",
         "subhead": "INTJ",
         "des": "고독한 북극곰"
       }
