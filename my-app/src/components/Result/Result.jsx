@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import styled from 'styled-components';
 import { Link, useParams } from 'react-router-dom';
 import Mbti from '../../common/api/mbtiApi.json';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
@@ -46,15 +47,13 @@ const Result = () => {
 
   return (
     <>
-      <div key={nation.id}>
+      <ResultSection key={nation.id}>
         <div>
-          <div>
-            <>
-              <Link to='/'>
-                <img src='../img/test-logo.png' alt='로고 이미지' />
-              </Link>
-            </>
-          </div>
+          <>
+            <Link to='/'>
+              <LogoImg src='../img/test-logo.png' alt='로고 이미지' />
+            </Link>
+          </>
           <h1>{nation.subject}</h1>
           <div>
             <img src={nation.img} alt='img' />
@@ -98,8 +97,21 @@ const Result = () => {
             </CopyToClipboard>
           </div>
         </div>
-      </div>
+      </ResultSection>
     </>
   );
 };
 export default Result;
+
+const ResultSection = styled.section`
+background-image: url('/img/result-background.png');
+background-size: cover;
+background-color: var(--);
+`;
+
+const LogoImg = styled.img`
+  src: url('img/test-logo.png');
+  width: 11rem;
+  height: 5rem;
+  margin: 17px auto 0;
+`;
