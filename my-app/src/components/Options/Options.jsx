@@ -2,7 +2,7 @@ import React, { createRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Questions from '../../common/api/questionsApi.json';
 import styled from 'styled-components';
-import { motion, blink } from '../../styles/Animation';
+import { blink } from '../../styles/Animation';
 
 const Options = () => {
   const [loading, setLoading] = useState(false);
@@ -49,7 +49,7 @@ const Options = () => {
     setTimeout(() => {
       const examResult = result.join('');
       Navigate(`/result/${examResult}`);
-    }, 30000);
+    }, 3000);
   };
 
   const TOTAL_SLIDES = 12;
@@ -108,11 +108,11 @@ const Options = () => {
           <LoadingBox>
             <CoralImg src='img/loading-coral.png' alt='산호 이미지' />
             <FishBox>
-              <FishImg src='img/loading-fish.png' alt='물고기 이미지' />
-              <FishImg delay={0.2} src='img/loading-fish.png' alt='물고기 이미지' />
-              <FishImg delay={0.4} src='img/loading-fish.png' alt='물고기 이미지' />
+              <FishImg delay={0} src='img/loading-fish.png' alt='물고기 이미지' />
+              <FishImg delay={0.15} src='img/loading-fish.png' alt='물고기 이미지' />
+              <FishImg delay={0.3} src='img/loading-fish.png' alt='물고기 이미지' />
+              <FishImg delay={0.45} src='img/loading-fish.png' alt='물고기 이미지' />
               <FishImg delay={0.6} src='img/loading-fish.png' alt='물고기 이미지' />
-              <FishImg delay={0.8} src='img/loading-fish.png' alt='물고기 이미지' />
             </FishBox>
             <h2>나와 닮은 해양생물을 찾는 중이에요</h2>
           </LoadingBox>
@@ -192,7 +192,7 @@ const Progressgauge = styled.div`
 const ProgressBox = styled.div`
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.8rem;
 `;
 
 const LoadingBox = styled.div`
@@ -203,7 +203,7 @@ const LoadingBox = styled.div`
   align-items: center;
 
   & h2 {
-    margin-top: 3.5rem;
+    margin-top: 4.5rem;
     font-size: var(--fs-lg);
     color: var(--main-color);
     font-weight: 400;
@@ -216,19 +216,18 @@ const CoralImg = styled.img`
   height: 8.6rem;
   align-items: center;
   justify-content: center;
-  animation: ${motion} 0.6s linear 0s infinite alternate;
 `;
 
 const FishBox = styled.div`
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
-  margin-top: 40px;
+  margin-top: 4.5rem;
 `;
 
 const FishImg = styled.img`
-  width: 2.3rem;
-  height: 1.8rem;
+  width: 3rem;
+  height: 2.5rem;
   animation: ${blink} 1s linear infinite;
   animation-delay: ${(props) => (props.delay ? `${props.delay}s` : 0)};
 `;
