@@ -20,7 +20,7 @@ const Result = () => {
         kakao.init(KAKAO_SHARE_API);
       }
       kakao.Link.sendScrap({
-        requestUrl: "marine-life-mbti.netlify.app", // 페이지 url
+        requestUrl: "https://marine-life-mbti.netlify.app", // 페이지 url
         templateId: 90172, // 메시지템플릿 번호
         templateArgs: {
           TITLE: "🐳 해양생물 유형테스트", // 제목 텍스트 ${TITLE} (물고기 이모티콘 추가)
