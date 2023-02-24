@@ -236,14 +236,14 @@ const ButtonBox = styled.div`
   margin-top: 6rem;
   position: relative;
 
-  @media only screen and (max-height: 700px) {
+  @media screen and (max-height: 700px) {
     margin-top: 1rem;
   }
 
   & button {
     display: inline-block;
     text-align: left;
-    padding-left: 44px;
+    padding-left: 4.4rem;
     background-color: var(--button-back-color);
     width: 35.8rem;
     height: 6rem;
@@ -256,13 +256,13 @@ const ButtonBox = styled.div`
     line-height: 1.8rem;
   }
 
-  @media (hover: hover) {
+  /* @media (hover: hover) {
     // 모바일 기기에서 hover 스타일 적용되지 않게 함
     button:hover {
       background-color: var(--sub-color);
       color: var(--bg-color);
     }
-  }
+  } */
 
   & button::before {
     content: "";
@@ -272,6 +272,10 @@ const ButtonBox = styled.div`
     left: 32px;
     width: 2rem;
     height: 2rem;
+
+    @media screen and (max-width: 380px) {
+      left: 23px;
+    }
   }
 
   /* & button:hover {

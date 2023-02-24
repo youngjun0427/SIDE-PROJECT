@@ -186,16 +186,6 @@ const ImgBox = styled.div`
     margin: 0 auto;
     animation: ${motion} 1.2s linear 0s infinite alternate;
   }
-
-  @media only screen and (max-width: 768px) {
-    width: 20rem;
-    height: 20rem;
-
-    & img {
-      width: 15rem;
-      height: 15rem;
-    }
-  }
 `;
 
 const DuoBox = styled.div`
@@ -296,7 +286,9 @@ const ButtonsBox = styled.div`
 
   & button {
     display: flex;
-    width: 35.8rem;
+    /* width: 35.8rem; */
+    margin: 0 1.6rem;
+    width: calc(100% - 32px);
     height: 4.8rem;
     margin: 0 1.6rem;
     border-radius: 10rem;
@@ -309,6 +301,10 @@ const ButtonsBox = styled.div`
     font-size: var(--fs-xs);
     line-height: 1.9rem;
     position: relative;
+
+    @media screen and (min-width: 391px) {
+      width: 35.8rem;
+    }
   }
 
   & h2 {
