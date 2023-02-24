@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link, useParams } from 'react-router-dom';
 import Mbti from '../../common/api/mbtiApi.json';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import { motion } from '../../styles/Animation';
 
 const Result = () => {
   const url = window.location.href;
@@ -123,7 +124,7 @@ export default Result;
 
 const ResultSection = styled.section`
   background-image: url('/img/result-background.png');
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-color: var(--result-back-color);
   overflow: hidden;
@@ -180,6 +181,7 @@ const ImgBox = styled.div`
     width: 25rem;
     height: 25rem;
     margin: 0 auto;
+    animation: ${motion} 1.2s linear 0s infinite alternate;
   }
 `;
 
@@ -240,7 +242,6 @@ const DuoCont = styled.div`
 const DangerBox = styled.div`
   display: flex;
   gap: 0.8rem;
-  text-align: center;
   justify-content: center;
 
   & img {
@@ -268,7 +269,7 @@ const ButtonsBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  margin-bottom: 4.8rem;
+  margin-bottom: 24.8rem;
 
   & :first-child {
     background-color: var(--kakao-back-color);

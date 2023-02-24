@@ -55,11 +55,8 @@ const StartBtn = styled.button`
   background-color: var(--bg-color);
   border-radius: 1.6rem;
   box-shadow: 0 0 0.8rem 0.2rem rgba(159, 159, 159, 0.25);
-  &:hover {
-    background: var(--sub-color);
-    color: var(--bg-color);
-  }
-  &:active {
+  &:hover,
+  :active {
     background: var(--sub-color);
     color: var(--bg-color);
   }
