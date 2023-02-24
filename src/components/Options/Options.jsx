@@ -1,8 +1,8 @@
-import React, { useRef, useEffect, useState, useCallback } from 'react';
-import { useNavigate } from 'react-router-dom';
-import Questions from '../../common/api/questionsApi.json';
-import styled from 'styled-components';
-import { blink } from '../../styles/Animation';
+import React, { useRef, useEffect, useState, useCallback } from "react";
+import { useNavigate } from "react-router-dom";
+import Questions from "../../common/api/questionsApi.json";
+import styled from "styled-components";
+import { blink } from "../../styles/Animation";
 
 const TOTAL_SLIDES = 12;
 
@@ -43,7 +43,7 @@ const Options = () => {
     }
 
     setTimeout(() => {
-      const examResult = result.join('');
+      const examResult = result.join("");
       Navigate(`/result/${examResult}`);
     }, 3000);
   }, [mbti, Navigate]);
@@ -53,7 +53,7 @@ const Options = () => {
   }, [currentSlide, mbtiChecker]);
 
   function Question({ question }) {
-    const questionText = question.replace(/\n/g, '<br />'); // 줄바꿈 문자열을 <br /> 태그로 변환
+    const questionText = question.replace(/\n/g, "<br />"); // 줄바꿈 문자열을 <br /> 태그로 변환
 
     return (
       <pre>
@@ -64,7 +64,7 @@ const Options = () => {
 
   return (
     <>
-      <OptionsSection id='root'>
+      <OptionsSection id="root">
         {!loading && (
           <>
             <OptionsSlider ref={slideRef} slideIndex={slideIndex}>
@@ -72,7 +72,7 @@ const Options = () => {
                 return (
                   <OptionsContent key={item.id}>
                     <LogoBox>
-                      <img src='img/test-logo.png' alt='로고이미지' />
+                      <img src="img/test-logo.png" alt="로고이미지" />
                       <h1>나와 닮은 해양생물 알아보기!</h1>
                     </LogoBox>
                     <ProgressBox>
@@ -109,13 +109,33 @@ const Options = () => {
         )}
         {loading && (
           <LoadingBox>
-            <CoralImg src='img/loading-coral.png' alt='산호 이미지' />
+            <CoralImg src="img/loading-coral.png" alt="산호 이미지" />
             <FishBox>
-              <FishImg delay={0} src='img/loading-fish.png' alt='물고기 이미지' />
-              <FishImg delay={0.15} src='img/loading-fish.png' alt='물고기 이미지' />
-              <FishImg delay={0.3} src='img/loading-fish.png' alt='물고기 이미지' />
-              <FishImg delay={0.45} src='img/loading-fish.png' alt='물고기 이미지' />
-              <FishImg delay={0.6} src='img/loading-fish.png' alt='물고기 이미지' />
+              <FishImg
+                delay={0}
+                src="img/loading-fish.png"
+                alt="물고기 이미지"
+              />
+              <FishImg
+                delay={0.15}
+                src="img/loading-fish.png"
+                alt="물고기 이미지"
+              />
+              <FishImg
+                delay={0.3}
+                src="img/loading-fish.png"
+                alt="물고기 이미지"
+              />
+              <FishImg
+                delay={0.45}
+                src="img/loading-fish.png"
+                alt="물고기 이미지"
+              />
+              <FishImg
+                delay={0.6}
+                src="img/loading-fish.png"
+                alt="물고기 이미지"
+              />
             </FishBox>
             <h2>나와 닮은 해양생물을 찾는 중이에요</h2>
           </LoadingBox>
@@ -139,7 +159,7 @@ const OptionsSlider = styled.div`
   display: flex;
   width: 1200vw;
   margin: 0 auto;
-  /* transition: transform 0.3s ease-in-out; */
+  transition: transform 0.2s linear;
   transform: ${({ slideIndex }) => `translateX(-${390 * slideIndex}px)`};
   @media (max-width: 390px) {
     transform: ${({ slideIndex }) => `translateX(-${100 * slideIndex}vw)`};
@@ -151,8 +171,9 @@ const OptionsContent = styled.div`
   flex-direction: column;
   width: 100vw;
   max-width: 390px;
-  background-image: url('/img/options-background.png');
+  background-image: url("/img/options-background.png");
   background-size: cover;
+  background-repeat: no-repeat;
 `;
 
 const LogoBox = styled.div`
@@ -199,7 +220,7 @@ const ButtonBox = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 2.5rem;
-  margin-top: 64px;
+  margin-top: 6.4rem;
   position: relative;
 
   & button {
@@ -227,8 +248,8 @@ const ButtonBox = styled.div`
   }
 
   & button::before {
-    content: '';
-    background-image: url('img/options-text-bullet.png');
+    content: "";
+    background-image: url("img/options-text-bullet.png");
     background-size: cover;
     position: absolute;
     left: 32px;
@@ -245,7 +266,7 @@ const ButtonBox = styled.div`
 const SlideBox = styled.div`
   width: 3rem;
   color: var(--sub-color);
-  font-family: 'Noto Sans';
+  font-family: "Noto Sans";
   font-weight: 700;
   font-size: var(--fs-xs);
   line-height: 1.9rem;
