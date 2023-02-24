@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 // import styles from './shareIcon.module.css';
 const KakaoShareButton = () => {
   useEffect(() => {
@@ -15,27 +15,23 @@ const KakaoShareButton = () => {
       }
       kakao.Link.createDefaultButton({
         // Render 부분 id=kakao-link-btn 을 찾아 그부분에 렌더링을 합니다
-        container: '#kakao-link-btn',
-        objectType: 'feed',
+        container: "#kakao-link-btn",
+        objectType: "feed",
         content: {
-          title: '여행MBIT',
-          description: '나에게 어울리는 여행지는?',
-          imageUrl: 'img/test-logo.png',
+          title: "여행MBIT",
+          description: "나에게 어울리는 여행지는?",
+          imageUrl: "img/test-logo.png",
           link: {
-            // mobileWebUrl: 'https://felizmbti.netlify.app/',
-            // webUrl: 'https://felizmbti.netlify.app/',
-            mobileWebUrl: 'http://localhost:3000',
-            webUrl: 'http://localhost:3000/',
+            mobileWebUrl: "https://marine-life-mbti.netlify.app/",
+            webUrl: "https://marine-life-mbti.netlify.app/",
           },
         },
         buttons: [
           {
-            title: '테스트 하기',
+            title: "테스트 하기",
             link: {
-              // mobileWebUrl: 'https://felizmbti.netlify.app/',
-              // webUrl: 'https://felizmbti.netlify.app/',
-              mobileWebUrl: 'http://localhost:3000',
-              webUrl: 'http://localhost:3000/',
+              mobileWebUrl: "https://marine-life-mbti.netlify.app/",
+              webUrl: "https://marine-life-mbti.netlify.app/",
             },
           },
         ],
