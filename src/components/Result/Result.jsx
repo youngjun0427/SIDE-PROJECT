@@ -273,6 +273,7 @@ const DangerText = styled.div`
 const ButtonsBox = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1.2rem;
   margin-bottom: 24.8rem;
 
