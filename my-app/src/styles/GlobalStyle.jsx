@@ -20,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     min-height: 100vh;
     margin: 0 auto;
+    word-break: keep-all;
     /* overflow-x: hidden; */
     /* overflow-y: auto;  */
 
