@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
-import styled from 'styled-components';
-import { Link, useParams } from 'react-router-dom';
-import Mbti from '../../common/api/mbtiApi.json';
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { motion } from '../../styles/Animation';
+import React, { useEffect } from "react";
+import styled from "styled-components";
+import { Link, useParams } from "react-router-dom";
+import Mbti from "../../common/api/mbtiApi.json";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { motion } from "../../styles/Animation";
 
 const Result = () => {
   const url = window.location.href;
@@ -20,19 +20,19 @@ const Result = () => {
         kakao.init(KAKAO_SHARE_API);
       }
       kakao.Link.sendScrap({
-        requestUrl: 'http://localhost:3000/', // 페이지 url
+        requestUrl: "marine-life-mbti.netlify.app", // 페이지 url
         templateId: 90172, // 메시지템플릿 번호
         templateArgs: {
-          TITLE: '🐳 해양생물 유형테스트', // 제목 텍스트 ${TITLE} (물고기 이모티콘 추가)
-          DESC: '나와 닮은 해양생물을 알아보기!', // 설명 텍스트 ${DESC}
+          TITLE: "🐳 해양생물 유형테스트", // 제목 텍스트 ${TITLE} (물고기 이모티콘 추가)
+          DESC: "나와 닮은 해양생물을 알아보기!", // 설명 텍스트 ${DESC}
         },
       });
     }
   };
 
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://developers.kakao.com/sdk/js/kakao.js';
+    const script = document.createElement("script");
+    script.src = "https://developers.kakao.com/sdk/js/kakao.js";
     script.async = true;
     document.body.appendChild(script);
     return () => document.body.removeChild(script);
@@ -42,25 +42,29 @@ const Result = () => {
     return <div>존재하지 않는 결과입니다.</div>;
   }
   const copyAlert = () => {
-    alert('링크 복사완료!');
+    alert("링크 복사완료!");
   };
 
   function handleHome() {
-    window.location.href = '/';
+    window.location.href = "/";
   }
 
-  const koempr = 'https://blog.naver.com/koempr';
+  const koempr = "https://blog.naver.com/koempr";
 
   return (
     <ResultSection key={nation.id}>
       <>
         {/* <Link to='/'> */}
-        <LogoImg onClick={handleHome} src='../img/test-logo.png' alt='로고 이미지' />
+        <LogoImg
+          onClick={handleHome}
+          src="../img/test-logo.png"
+          alt="로고 이미지"
+        />
         {/* </Link> */}
       </>
       <h1>{nation.subject}</h1>
       <ImgBox>
-        <img src={nation.img} alt='img' />
+        <img src={nation.img} alt="img" />
       </ImgBox>
       <ResultBox>
         <span>{nation.features[0].des}</span>
@@ -72,13 +76,13 @@ const Result = () => {
         </ul>
       </ResultBox>
       <DuoHeadingBox>
-        <img src='/img/result-duo-bubble.png' alt='거품이미지' />
+        <img src="/img/result-duo-bubble.png" alt="거품이미지" />
         <span>{nation.name}의 유형별 궁합</span>
       </DuoHeadingBox>
       <DuoBox>
         <DuoCont>
           <Link to={`${/result/}${nation.duo[0].subhead}`}>
-            <img src={nation.duo[0].img} alt='mbti캐릭터' />
+            <img src={nation.duo[0].img} alt="mbti캐릭터" />
           </Link>
           <div>
             <h4>Good</h4>
@@ -87,7 +91,7 @@ const Result = () => {
         </DuoCont>
         <DuoCont>
           <Link to={`${/result/}${nation.counter[0].subhead}`}>
-            <img src={nation.counter[0].img} alt='mbti캐릭터' />
+            <img src={nation.counter[0].img} alt="mbti캐릭터" />
           </Link>
           <div>
             <h4>Bad</h4>
@@ -96,7 +100,7 @@ const Result = () => {
         </DuoCont>
       </DuoBox>
       <DangerBox>
-        <img src='/img/result-duo-bubble.png' alt='거품이미지' />
+        <img src="/img/result-duo-bubble.png" alt="거품이미지" />
         <span>{nation.name}은(는) 지금 바다에서</span>
       </DangerBox>
       <DangerText>{nation.danger}</DangerText>
@@ -107,7 +111,8 @@ const Result = () => {
         </CopyToClipboard>
         <RetryButton onClick={handleHome}>다시하기</RetryButton>
         <h2>
-          다른 해양생물들의 환경과 소식이 궁금하시다면 <br /> 아래 링크를 통해 방문해 주세요!
+          다른 해양생물들의 환경과 소식이 궁금하시다면 <br /> 아래 링크를 통해
+          방문해 주세요!
         </h2>
         <button
           onClick={() => {
@@ -123,7 +128,7 @@ const Result = () => {
 export default Result;
 
 const ResultSection = styled.section`
-  background-image: url('/img/result-background.png');
+  background-image: url("/img/result-background.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-color: var(--result-back-color);
@@ -139,7 +144,7 @@ const ResultSection = styled.section`
 `;
 
 const LogoImg = styled.img`
-  src: url('img/test-logo.png');
+  src: url("img/test-logo.png");
   width: 11rem;
   height: 5rem;
   margin: 1.7rem auto 7rem;
@@ -171,7 +176,7 @@ const ResultBox = styled.div`
 const ImgBox = styled.div`
   width: 35rem;
   height: 35rem;
-  background-image: url('/img/result-img-background.png');
+  background-image: url("/img/result-img-background.png");
   background-size: cover;
   margin: 0 auto 4rem;
   display: flex;
@@ -290,7 +295,7 @@ const ButtonsBox = styled.div`
     align-items: center;
     background-color: var(--bg-color);
     color: var(--button-share-color);
-    font-family: 'Noto Sans';
+    font-family: "Noto Sans";
     font-weight: 600;
     font-size: var(--fs-xs);
     line-height: 1.9rem;
@@ -307,9 +312,9 @@ const ButtonsBox = styled.div`
 
 const KakaoButton = styled.button`
   &::before {
-    content: '';
+    content: "";
     display: inline-block;
-    background: url('/img/kakao-icon.png') no-repeat center center;
+    background: url("/img/kakao-icon.png") no-repeat center center;
     background-size: cover;
     width: 1.6rem;
     height: 1.6rem;
@@ -319,9 +324,9 @@ const KakaoButton = styled.button`
 
 const CopyButton = styled.button`
   &::before {
-    content: '';
+    content: "";
     display: inline-block;
-    background: url('/img/link-icon.png') no-repeat center center;
+    background: url("/img/link-icon.png") no-repeat center center;
     background-size: cover;
     width: 1.6rem;
     height: 1.6rem;
@@ -331,9 +336,9 @@ const CopyButton = styled.button`
 
 const RetryButton = styled.button`
   &::before {
-    content: '';
+    content: "";
     display: inline-block;
-    background: url('/img/refresh-icon.png') no-repeat center center;
+    background: url("/img/refresh-icon.png") no-repeat center center;
     background-size: cover;
     width: 1.6rem;
     height: 1.6rem;
