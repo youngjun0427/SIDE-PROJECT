@@ -37,7 +37,6 @@ const Result = () => {
     return () => document.body.removeChild(script);
   }, []);
 
-  console.log(nation.features[0]);
   if (!nation) {
     return <div>존재하지 않는 결과입니다.</div>;
   }
@@ -45,12 +44,18 @@ const Result = () => {
     alert('링크 복사완료!');
   };
 
+  function handleHome() {
+    window.location.href = '/';
+  }
+
+  const koempr = 'https://blog.naver.com/koempr';
+
   return (
     <ResultSection key={nation.id}>
       <>
-        <Link to='/'>
-          <LogoImg src='../img/test-logo.png' alt='로고 이미지' />
-        </Link>
+        {/* <Link to='/'> */}
+        <LogoImg onClick={handleHome} src='../img/test-logo.png' alt='로고 이미지' />
+        {/* </Link> */}
       </>
       <h1>{nation.subject}</h1>
       <ImgBox>
@@ -65,10 +70,10 @@ const Result = () => {
           })}
         </ul>
       </ResultBox>
-      <DuoTextCont>
+      <DuoHeadingBox>
         <img src='/img/result-duo-bubble.png' alt='거품이미지' />
         <span>{nation.name}의 유형별 궁합</span>
-      </DuoTextCont>
+      </DuoHeadingBox>
       <DuoBox>
         <DuoCont>
           <Link to={`${/result/}${nation.duo[0].subhead}`}>
@@ -89,15 +94,28 @@ const Result = () => {
           </div>
         </DuoCont>
       </DuoBox>
-      <ButtonBox>
-        <button onClick={shareToKakaotalk}>카톡공유</button>
-        <Link to='/'>
-          <button>다시하기</button>
-        </Link>
+      <DangerBox>
+        <img src='/img/result-duo-bubble.png' alt='거품이미지' />
+        <span>{nation.name}은(는) 지금 바다에서</span>
+      </DangerBox>
+      <DangerText>{nation.danger}</DangerText>
+      <ButtonsBox>
+        <KakaoButton onClick={shareToKakaotalk}>내 결과 공유하기</KakaoButton>
         <CopyToClipboard text={url}>
-          <button onClick={copyAlert}>링크복사</button>
+          <CopyButton onClick={copyAlert}>링크복사</CopyButton>
         </CopyToClipboard>
-      </ButtonBox>
+        <RetryButton onClick={handleHome}>다시하기</RetryButton>
+        <h2>
+          다른 해양생물들의 환경과 소식이 궁금하시다면 <br /> 아래 링크를 통해 방문해 주세요!
+        </h2>
+        <button
+          onClick={() => {
+            window.open(koempr);
+          }}
+        >
+          해양공단 블로그 방문하기
+        </button>
+      </ButtonsBox>
     </ResultSection>
   );
 };
@@ -117,11 +135,6 @@ const ResultSection = styled.section`
     color: var(--result-name-color);
     margin-bottom: 2.4rem;
   }
-  /* ::-webkit-scrollbar {
-    width: 0px;
-    height: 0px;
-    background-color: transparent;
-  } */
 `;
 
 const LogoImg = styled.img`
@@ -129,6 +142,7 @@ const LogoImg = styled.img`
   width: 11rem;
   height: 5rem;
   margin: 1.7rem auto 7rem;
+  cursor: pointer;
 `;
 
 const ResultBox = styled.div`
@@ -150,7 +164,6 @@ const ResultBox = styled.div`
 
   & li {
     list-style: circle;
-    padding: 0.5rem;
   }
 `;
 
@@ -177,11 +190,10 @@ const DuoBox = styled.div`
   justify-content: center;
 `;
 
-const DuoTextCont = styled.div`
+const DuoHeadingBox = styled.div`
   display: flex;
   gap: 0.8rem;
   text-align: center;
-  margin-bottom: 1.6rem;
   justify-content: center;
 
   & span {
@@ -195,6 +207,14 @@ const DuoTextCont = styled.div`
     width: 2.3rem;
     height: 3.2rem;
   }
+
+  & p {
+    font-weight: 400;
+    font-size: var(--fs-sm);
+    line-height: 141.2%;
+    color: var(--text-color);
+    margin: 0 3rem;
+  }
 `;
 
 const DuoCont = styled.div`
@@ -205,6 +225,7 @@ const DuoCont = styled.div`
     background-color: var(--bg-color);
     border-radius: 1.6rem;
     margin-bottom: 0.8rem;
+    margin-top: 1.6rem;
   }
 
   & h4,
@@ -216,18 +237,105 @@ const DuoCont = styled.div`
   }
 `;
 
-const ButtonBox = styled.div`
+const DangerBox = styled.div`
+  display: flex;
+  gap: 0.8rem;
+  text-align: center;
+  justify-content: center;
+
+  & img {
+    width: 2.3rem;
+    height: 3.2rem;
+  }
+
+  & span {
+    font-weight: 400;
+    font-size: var(--fs-lg);
+    line-height: 141.2%;
+    color: var(--sub-text-color);
+  }
+`;
+
+const DangerText = styled.div`
+  font-weight: 400;
+  font-size: var(--fs-sm);
+  line-height: 141.2%;
+  color: var(--text-color);
+  margin: 1.6rem 3rem 4.8rem;
+`;
+
+const ButtonsBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  justify-content: center;
+  margin-bottom: 4.8rem;
 
-  & {
+  & :first-child {
+    background-color: var(--kakao-back-color);
+    color: var(--kakako-text-color);
+  }
+
+  & :nth-child(3) {
+    margin-bottom: 4.8rem;
   }
 
   & button {
+    display: flex;
     width: 35.8rem;
     height: 4.8rem;
+    margin: 0 1.6rem;
     border-radius: 10rem;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    color: var(--button-share-color);
+    font-family: 'Noto Sans';
+    font-weight: 600;
+    font-size: var(--fs-xs);
+    line-height: 1.9rem;
+    position: relative;
+  }
+
+  & h2 {
+    font-weight: 400;
+    font-size: var(--fs-md);
+    line-height: 141.2%;
+    color: var(--sub-text-color);
+  }
+`;
+
+const KakaoButton = styled.button`
+  &::before {
+    content: '';
+    display: inline-block;
+    background: url('/img/kakao-icon.png') no-repeat center center;
+    background-size: cover;
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-right: 0.6rem;
+  }
+`;
+
+const CopyButton = styled.button`
+  &::before {
+    content: '';
+    display: inline-block;
+    background: url('/img/link-icon.png') no-repeat center center;
+    background-size: cover;
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-right: 0.6rem;
+  }
+`;
+
+const RetryButton = styled.button`
+  &::before {
+    content: '';
+    display: inline-block;
+    background: url('/img/refresh-icon.png') no-repeat center center;
+    background-size: cover;
+    width: 1.6rem;
+    height: 1.6rem;
+    margin-right: 0.6rem;
   }
 `;
