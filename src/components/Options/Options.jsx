@@ -159,7 +159,7 @@ const OptionsSlider = styled.div`
   display: flex;
   width: 1200vw;
   margin: 0 auto;
-  transition: transform 0.2s linear;
+  transition: transform 0.3s ease-in-out;
   transform: ${({ slideIndex }) => `translateX(-${390 * slideIndex}px)`};
   @media (max-width: 390px) {
     transform: ${({ slideIndex }) => `translateX(-${100 * slideIndex}vw)`};
@@ -174,6 +174,11 @@ const OptionsContent = styled.div`
   background-image: url("/img/options-background.png");
   background-size: cover;
   background-repeat: no-repeat;
+  background-color: var(--result-back-color);
+
+  @media only screen and (min-height: 880px) {
+    background-size: contain;
+  }
 `;
 
 const LogoBox = styled.div`
@@ -191,6 +196,10 @@ const LogoBox = styled.div`
     font-weight: 400;
     font-size: var(--fs-lg);
   }
+
+  @media only screen and (min-height: 880px) {
+    margin-bottom: 8rem;
+  }
 `;
 
 const ProgressBox = styled.div`
@@ -198,6 +207,10 @@ const ProgressBox = styled.div`
   align-items: center;
   justify-content: space-between;
   margin: 0.5rem auto 3.2rem;
+
+  @media only screen and (max-height: 800px) {
+    margin-bottom: 2rem;
+  }
 `;
 
 const ProgressBar = styled.div`
@@ -220,8 +233,12 @@ const ButtonBox = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 2.5rem;
-  margin-top: 6.4rem;
+  margin-top: 6rem;
   position: relative;
+
+  @media only screen and (max-height: 700px) {
+    margin-top: 1rem;
+  }
 
   & button {
     display: inline-block;

@@ -54,13 +54,11 @@ const Result = () => {
   return (
     <ResultSection key={nation.id}>
       <>
-        {/* <Link to='/'> */}
         <LogoImg
           onClick={handleHome}
           src="../img/test-logo.png"
           alt="로고 이미지"
         />
-        {/* </Link> */}
       </>
       <h1>{nation.subject}</h1>
       <ImgBox>
@@ -187,6 +185,16 @@ const ImgBox = styled.div`
     height: 25rem;
     margin: 0 auto;
     animation: ${motion} 1.2s linear 0s infinite alternate;
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 20rem;
+    height: 20rem;
+
+    & img {
+      width: 15rem;
+      height: 15rem;
+    }
   }
 `;
 
