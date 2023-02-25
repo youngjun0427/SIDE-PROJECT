@@ -104,7 +104,7 @@ const Result = () => {
         </DangerBox>
         <DangerText>{nation.danger}</DangerText>
         <ButtonsBox>
-          <KakaoButton onClick={shareToKakaotalk}>내 결과 공유하기</KakaoButton>
+          <KakaoButton onClick={shareToKakaotalk}>친구에게 테스트 공유하기</KakaoButton>
           <CopyToClipboard text={url}>
             <CopyButton onClick={copyAlert}>링크복사</CopyButton>
           </CopyToClipboard>
