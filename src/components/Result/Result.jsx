@@ -20,13 +20,35 @@ const Result = () => {
         kakao.init(KAKAO_SHARE_API);
       }
       const url = window.location.href + "/";
-      kakao.Link.sendScrap({
-        requestUrl: url, // 페이지 url
-        templateId: 90172, // 메시지템플릿 번호
-        templateArgs: {
-          TITLE: "🐳 해양생물 유형테스트", // 제목 텍스트 ${TITLE} (물고기 이모티콘 추가)
-          DESC: "나와 닮은 해양생물을 알아보기!", // 설명 텍스트 ${DESC}
+      // kakao.Link.sendScrap({
+      //   requestUrl: url, // 페이지 url
+      //   templateId: 90172, // 메시지템플릿 번호
+      //   templateArgs: {
+      //     TITLE: "🐳 해양생물 유형테스트", // 제목 텍스트 ${TITLE} (물고기 이모티콘 추가)
+      //     DESC: "나와 닮은 해양생물을 알아보기!", // 설명 텍스트 ${DESC}
+      //   },
+      // });
+      kakao.Link.createDefaultButton({
+        container: "#kakao-link-btn",
+        objectType: "feed",
+        content: {
+          title: "🐳 해양생물 유형테스트",
+          description: "나와 닮은 해양생물을 알아보기!",
+          imageUrl: "img/tumbnail.png",
+          link: {
+            mobileWebUrl: url,
+            webUrl: url, // 현재 주소값으로 설정
+          },
         },
+        buttons: [
+          {
+            title: "테스트 하러가기!",
+            link: {
+              mobileWebUrl: url,
+              webUrl: url, // 현재 주소값으로 설정
+            },
+          },
+        ],
       });
     }
   };
