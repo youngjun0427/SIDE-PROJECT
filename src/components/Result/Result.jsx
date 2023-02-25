@@ -19,6 +19,7 @@ const Result = () => {
         // 두번째 step 에서 가져온 javascript key 를 이용하여 initialize
         kakao.init(KAKAO_SHARE_API);
       }
+      const url = window.location.href;
       kakao.Link.sendScrap({
         requestUrl: url, // 페이지 url
         templateId: 90172, // 메시지템플릿 번호
@@ -104,7 +105,9 @@ const Result = () => {
         </DangerBox>
         <DangerText>{nation.danger}</DangerText>
         <ButtonsBox>
-          <KakaoButton onClick={shareToKakaotalk}>친구에게 테스트 공유하기</KakaoButton>
+          <KakaoButton onClick={shareToKakaotalk}>
+            친구에게 테스트 공유하기
+          </KakaoButton>
           <CopyToClipboard text={url}>
             <CopyButton onClick={copyAlert}>링크복사</CopyButton>
           </CopyToClipboard>
