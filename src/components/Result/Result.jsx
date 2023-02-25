@@ -22,7 +22,7 @@ const Result = () => {
       const url = window.location.href + "/";
       kakao.Link.sendScrap({
         requestUrl: url, // 페이지 url
-        templateId: 90172, // 메시지템플릿 번호
+        templateId: 90481, // 메시지템플릿 번호
         templateArgs: {
           TITLE: "🐳 해양생물 유형테스트", // 제목 텍스트 ${TITLE} (물고기 이모티콘 추가)
           DESC: "나와 닮은 해양생물을 알아보기!", // 설명 텍스트 ${DESC}
