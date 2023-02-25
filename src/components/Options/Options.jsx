@@ -149,7 +149,7 @@ export default Options;
 
 const OptionsSection = styled.section`
   display: flex;
-  /* overflow: hidden; */
+  background-color: var(--bg-color);
   width: 100%;
   height: 100vh;
   background-size: cover;

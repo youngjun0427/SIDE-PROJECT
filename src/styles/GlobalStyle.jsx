@@ -1,7 +1,7 @@
-import { createGlobalStyle } from 'styled-components';
-import reset from 'styled-reset';
-import './font.css';
-import './global.css';
+import { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
+import "./font.css";
+import "./global.css";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -10,10 +10,15 @@ const GlobalStyle = createGlobalStyle`
 
   * {
     box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    ::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   html, 
   body {
+    background-color: var(--result-back-color);
     font-family:'SANGJUDajungdagam', sans-serif;
     text-align: center;
     max-width: 390px;
@@ -52,6 +57,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
     height: 100%;
   }
+
 `;
 
 export default GlobalStyle;
