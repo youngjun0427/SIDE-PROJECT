@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const MainLayout = ({ children }) => {
   return (
@@ -17,8 +17,7 @@ const MainContainer = styled.div`
   height: 100%;
   min-height: 100vh;
   margin: 0 auto;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow: hidden;
   box-shadow: rgb(0 0 0 / 16%) 0px 0px 8px;
 `;
 

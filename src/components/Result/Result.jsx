@@ -52,85 +52,91 @@ const Result = () => {
   const koempr = "https://blog.naver.com/koempr";
 
   return (
-    <ResultSection key={nation.id}>
-      <>
-        <LogoImg
-          onClick={handleHome}
-          src="../img/test-logo.png"
-          alt="로고 이미지"
-        />
-      </>
-      <h1>{nation.subject}</h1>
-      <ImgBox>
-        <img src={nation.img} alt="img" />
-      </ImgBox>
-      <ResultBox>
-        <span>{nation.features[0].des}</span>
-        <span>{nation.features[1].des}</span>
-        <ul>
-          {nation.description.map((item, index) => {
-            return <li key={index}>{item.des}</li>;
-          })}
-        </ul>
-      </ResultBox>
-      <DuoHeadingBox>
-        <img src="/img/result-duo-bubble.png" alt="거품이미지" />
-        <span>{nation.name}의 유형별 궁합</span>
-      </DuoHeadingBox>
-      <DuoBox>
-        <DuoCont>
-          <Link to={`${/result/}${nation.duo[0].subhead}`}>
-            <img src={nation.duo[0].img} alt="mbti캐릭터" />
-          </Link>
-          <div>
-            <h4>Good</h4>
-            <p>{nation.duo[0].des}</p>
-          </div>
-        </DuoCont>
-        <DuoCont>
-          <Link to={`${/result/}${nation.counter[0].subhead}`}>
-            <img src={nation.counter[0].img} alt="mbti캐릭터" />
-          </Link>
-          <div>
-            <h4>Bad</h4>
-            <p>{nation.counter[0].des}</p>
-          </div>
-        </DuoCont>
-      </DuoBox>
-      <DangerBox>
-        <img src="/img/result-duo-bubble.png" alt="거품이미지" />
-        <span>{nation.name}은(는) 지금 바다에서</span>
-      </DangerBox>
-      <DangerText>{nation.danger}</DangerText>
-      <ButtonsBox>
-        <KakaoButton onClick={shareToKakaotalk}>내 결과 공유하기</KakaoButton>
-        <CopyToClipboard text={url}>
-          <CopyButton onClick={copyAlert}>링크복사</CopyButton>
-        </CopyToClipboard>
-        <RetryButton onClick={handleHome}>다시하기</RetryButton>
-        <h2>
-          다른 해양생물들의 환경과 소식이 궁금하시다면 <br /> 아래 링크를 통해
-          방문해 주세요!
-        </h2>
-        <button
-          onClick={() => {
-            window.open(koempr);
-          }}
-        >
-          해양공단 블로그 방문하기
-        </button>
-      </ButtonsBox>
-    </ResultSection>
+    <ResultContainer>
+      <ResultSection key={nation.id}>
+        <>
+          <LogoImg
+            onClick={handleHome}
+            src="../img/test-logo.png"
+            alt="로고 이미지"
+          />
+        </>
+        <h1>{nation.subject}</h1>
+        <ImgBox>
+          <img src={nation.img} alt="img" />
+        </ImgBox>
+        <ResultBox>
+          <span>{nation.features[0].des}</span>
+          <span>{nation.features[1].des}</span>
+          <ul>
+            {nation.description.map((item, index) => {
+              return <li key={index}>{item.des}</li>;
+            })}
+          </ul>
+        </ResultBox>
+        <DuoHeadingBox>
+          <img src="/img/result-duo-bubble.png" alt="거품이미지" />
+          <span>{nation.name}의 유형별 궁합</span>
+        </DuoHeadingBox>
+        <DuoBox>
+          <DuoCont>
+            <Link to={`${/result/}${nation.duo[0].subhead}`}>
+              <img src={nation.duo[0].img} alt="mbti캐릭터" />
+            </Link>
+            <div>
+              <h4>Good</h4>
+              <p>{nation.duo[0].des}</p>
+            </div>
+          </DuoCont>
+          <DuoCont>
+            <Link to={`${/result/}${nation.counter[0].subhead}`}>
+              <img src={nation.counter[0].img} alt="mbti캐릭터" />
+            </Link>
+            <div>
+              <h4>Bad</h4>
+              <p>{nation.counter[0].des}</p>
+            </div>
+          </DuoCont>
+        </DuoBox>
+        <DangerBox>
+          <img src="/img/result-duo-bubble.png" alt="거품이미지" />
+          <span>{nation.name}은(는) 지금 바다에서</span>
+        </DangerBox>
+        <DangerText>{nation.danger}</DangerText>
+        <ButtonsBox>
+          <KakaoButton onClick={shareToKakaotalk}>내 결과 공유하기</KakaoButton>
+          <CopyToClipboard text={url}>
+            <CopyButton onClick={copyAlert}>링크복사</CopyButton>
+          </CopyToClipboard>
+          <RetryButton onClick={handleHome}>다시하기</RetryButton>
+          <h2>
+            다른 해양생물들의 환경과 소식이 궁금하시다면 <br /> 아래 링크를 통해
+            방문해 주세요!
+          </h2>
+          <button
+            onClick={() => {
+              window.open(koempr);
+            }}
+          >
+            해양공단 블로그 방문하기
+          </button>
+        </ButtonsBox>
+      </ResultSection>
+    </ResultContainer>
   );
 };
 export default Result;
+
+const ResultContainer = styled.div`
+  overflow: scroll;
+  height: 100vh;
+`;
 
 const ResultSection = styled.section`
   background-image: url("/img/result-background.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-color: var(--result-back-color);
-  overflow: hidden;
 
   & h1 {
     font-weight: 400;
@@ -144,8 +150,8 @@ const ResultSection = styled.section`
 const LogoImg = styled.img`
   src: url("img/test-logo.png");
   width: 11rem;
-  height: 5rem;
-  margin: 1.7rem auto 7rem;
+  padding-top: 1.7rem;
+  margin: 0 auto 7rem;
   cursor: pointer;
 `;
 
@@ -273,7 +279,7 @@ const ButtonsBox = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 1.2rem;
-  margin-bottom: 24.8rem;
+  padding-bottom: 24.8rem;
 
   & :first-child {
     background-color: var(--kakao-back-color);
@@ -286,7 +292,6 @@ const ButtonsBox = styled.div`
 
   & button {
     display: flex;
-    /* width: 35.8rem; */
     margin: 0 1.6rem;
     width: calc(100% - 32px);
     height: 4.8rem;

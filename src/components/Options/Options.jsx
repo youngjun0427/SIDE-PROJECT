@@ -149,10 +149,14 @@ export default Options;
 
 const OptionsSection = styled.section`
   display: flex;
-  overflow: hidden;
+  /* overflow: hidden; */
   width: 100%;
   height: 100vh;
   background-size: cover;
+
+  body {
+    overflow: hidden;
+  }
 `;
 
 const OptionsSlider = styled.div`
