@@ -6,7 +6,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { motion } from "../../styles/Animation";
 
 const Result = () => {
-  const url = window.location.href;
+  const homeUrl = window.location.href;
   const { mbtiName } = useParams();
   const nation = Mbti[mbtiName];
 
@@ -19,7 +19,7 @@ const Result = () => {
         // 두번째 step 에서 가져온 javascript key 를 이용하여 initialize
         kakao.init(KAKAO_SHARE_API);
       }
-      const url = window.location.href;
+      const url = window.location.href + "/";
       kakao.Link.sendScrap({
         requestUrl: url, // 페이지 url
         templateId: 90172, // 메시지템플릿 번호
@@ -108,7 +108,7 @@ const Result = () => {
           <KakaoButton onClick={shareToKakaotalk}>
             친구에게 테스트 공유하기
           </KakaoButton>
-          <CopyToClipboard text={url}>
+          <CopyToClipboard text={homeUrl}>
             <CopyButton onClick={copyAlert}>링크복사</CopyButton>
           </CopyToClipboard>
           <RetryButton onClick={handleHome}>다시하기</RetryButton>
