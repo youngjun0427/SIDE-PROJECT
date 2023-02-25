@@ -171,14 +171,14 @@
     "duo": [
       {
         "img": "/img/ESTJ황제펭귄.png",
-        "subhead": "ENFJ",
+        "subhead": "ESTJ",
         "des": "법 없이도 살 황제펭귄"
       }
     ],
     "counter": [
       {
         "img": "/img/ESTP흰동가리.png",
-        "subhead": "ESFJ",
+        "subhead": "ESTP",
         "des": "모험을 즐기는 흰동가리"
       }
     ]
@@ -270,7 +270,7 @@
     "counter": [
       {
         "img": "/img/ENTJ바다사자.png",
-        "subhead": "ENTP",
+        "subhead": "ENTJ",
         "des": "호기심 넘치는 바다사자"
       }
     ]
@@ -404,7 +404,7 @@
     "counter": [
       {
         "img": "/img/INFP상괭이.png",
-        "subhead": "INFJ",
+        "subhead": "INFP",
         "des": "수줍은 미소의 상괭이"
       }
     ]
@@ -443,14 +443,14 @@
     "duo": [
       {
         "img": "/img/ISTJ해삼.png",
-        "subhead": "ISFJ",
+        "subhead": "ISTJ",
         "des": "부지런하고 깔끔한 해삼"
       }
     ],
     "counter": [
       {
         "img": "/img/ISTP성게.png",
-        "subhead": "INTJ",
+        "subhead": "ISTP",
         "des": "게으른 천재 성게"
       }
     ]
@@ -628,7 +628,7 @@
     "counter": [
       {
         "img": "/img/INTP문어.png",
-        "subhead": "ISTJ",
+        "subhead": "INTP",
         "des": "논리적인 문어"
       }
     ]
