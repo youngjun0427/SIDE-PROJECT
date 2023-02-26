@@ -240,6 +240,11 @@ const ButtonBox = styled.div`
   margin-top: 6rem;
   position: relative;
 
+  & :hover {
+    background-color: var(--sub-color);
+    color: var(--bg-color);
+  }
+
   @media screen and (max-height: 700px) {
     margin-top: 1rem;
   }
@@ -261,13 +266,13 @@ const ButtonBox = styled.div`
     line-height: 1.8rem;
   }
 
-  /* @media (hover: hover) {
+  @media (hover: hover) {
     // 모바일 기기에서 hover 스타일 적용되지 않게 함
     button:hover {
-      background-color: var(--sub-color);
-      color: var(--bg-color);
+      background-color: var(--button-back-color);
+      color: var(--button-share-color);
     }
-  } */
+  }
 
   & button::before {
     content: "";
@@ -282,11 +287,6 @@ const ButtonBox = styled.div`
       left: 2.3rem;
     }
   }
-
-  /* & button:hover {
-    background-color: var(--sub-color);
-    color: var(--bg-color);
-  } */
 `;
 
 const SlideBox = styled.div`
