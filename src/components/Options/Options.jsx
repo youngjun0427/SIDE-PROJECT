@@ -247,7 +247,7 @@ const ButtonBox = styled.div`
   & button {
     display: inline-block;
     text-align: left;
-    padding-left: 4.4rem;
+    padding-left: 4.2rem;
     background-color: var(--button-back-color);
     width: 35.8rem;
     height: 6rem;
@@ -256,7 +256,8 @@ const ButtonBox = styled.div`
     align-items: center;
     color: var(--button-share-color);
     font-weight: 400;
-    font-size: 1.8rem;
+    font-size: var(--fs-db);
+
     line-height: 1.8rem;
   }
 
@@ -273,12 +274,12 @@ const ButtonBox = styled.div`
     background-image: url("img/options-text-bullet.png");
     background-size: cover;
     position: absolute;
-    left: 32px;
+    left: 3.1rem;
     width: 2rem;
     height: 2rem;
 
     @media screen and (max-width: 380px) {
-      left: 23px;
+      left: 2.3rem;
     }
   }
 
