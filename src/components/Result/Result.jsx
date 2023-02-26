@@ -163,16 +163,20 @@ const ResultBox = styled.div`
   flex-direction: column;
   text-align: left;
   margin-bottom: 4.8rem;
+  gap: 0.5rem;
+
   & span,
   ul {
     font-weight: 400;
-    font-size: var(--fs-sm);
-    line-height: 141.2%;
-    color: var(--text-color);
+    font-size: var(--fs-db);
+    line-height: 140%;
+    color: #212529;
     margin: 0 3rem;
   }
+
   & ul {
     margin-top: 1rem;
+    color: var(--text-color);
   }
 
   & li {
@@ -236,16 +240,24 @@ const DuoCont = styled.div`
     width: 17.5rem;
     height: 17.5rem;
     box-shadow: 0 2px 9px rgba(168, 168, 168, 0.25);
+    background-image: url("/img/result-img-background.png");
+    background-size: cover;
     background-color: var(--bg-color);
     border-radius: 1.6rem;
     margin-bottom: 0.8rem;
     margin-top: 1.6rem;
   }
 
-  & h4,
-  p {
+  & h4 {
     font-weight: 400;
-    font-size: var(--fs-md);
+    font-size: var(--fs-lg);
+    line-height: 141.2%;
+    color: var(--result-name-color);
+  }
+
+  & p {
+    font-weight: 400;
+    font-size: var(--fs-db);
     line-height: 141.2%;
     color: var(--text-color);
   }
@@ -255,7 +267,6 @@ const DangerBox = styled.div`
   display: flex;
   gap: 0.8rem;
   justify-content: center;
-
   & img {
     width: 2.3rem;
     height: 3.2rem;
@@ -271,10 +282,10 @@ const DangerBox = styled.div`
 
 const DangerText = styled.div`
   font-weight: 400;
-  font-size: var(--fs-sm);
-  line-height: 141.2%;
+  font-size: var(--fs-db);
+  line-height: 140%;
   color: var(--text-color);
-  margin: 1.6rem 3rem 4.8rem;
+  margin: 1.6rem 2.5rem 4.8rem;
 `;
 
 const ButtonsBox = styled.div`
@@ -317,7 +328,7 @@ const ButtonsBox = styled.div`
 
   & h2 {
     font-weight: 400;
-    font-size: var(--fs-md);
+    font-size: var(--fs-db);
     line-height: 141.2%;
     color: var(--sub-text-color);
   }
