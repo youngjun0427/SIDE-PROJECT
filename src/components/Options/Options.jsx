@@ -240,7 +240,8 @@ const ButtonBox = styled.div`
   margin-top: 6rem;
   position: relative;
 
-  & :hover {
+  button:hover,
+  :focus {
     background-color: var(--sub-color);
     color: var(--bg-color);
   }
@@ -264,14 +265,6 @@ const ButtonBox = styled.div`
     font-size: var(--fs-db);
 
     line-height: 1.8rem;
-  }
-
-  @media (hover: hover) {
-    // 모바일 기기에서 hover 스타일 적용되지 않게 함
-    button:hover {
-      background-color: var(--button-back-color);
-      color: var(--button-share-color);
-    }
   }
 
   & button::before {
