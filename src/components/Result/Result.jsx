@@ -113,7 +113,8 @@ const Result = () => {
           </CopyToClipboard>
           <RetryButton onClick={handleHome}>다시하기</RetryButton>
           <h2>
-            다른 해양생물들의 환경과 소식이 궁금하시다면 <br /> 아래 링크를 통해
+            콘텐츠 출처는 해양환경공단 공식 블로그입니다. <br /> 다른
+            해양생물들의 환경과 소식이 궁금하시다면 <br /> 아래 링크를 통해
             방문해 주세요!
           </h2>
           <button
@@ -121,7 +122,7 @@ const Result = () => {
               window.open(koempr);
             }}
           >
-            해양공단 블로그 방문하기
+            해양환경공단 블로그 방문하기
           </button>
         </ButtonsBox>
       </ResultSection>
