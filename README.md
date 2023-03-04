@@ -17,7 +17,7 @@ MBTI 16개 유형을 바탕으로 각 성향과 비슷한 해양생물을 찾아
 2023.02.18 ~ 2021.02.26
 
 **제작인원**
-프론트 개발자 1명
+프론트엔드 개발자 1명, 
 앱 디자이너 1명
 
 **기술스택**
@@ -53,6 +53,7 @@ React, Styled-Components, Figma, ESLint, Prettier
 **tools**
 
 IDE : VScode
+
 Deploy : netlify
 
 **dependencies**
